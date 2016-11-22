@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# import re
+import re
 from collections import Counter
 from data_utils import get_file_list
 
@@ -33,22 +33,27 @@ def main():
                     components.append(line[16:])
 
     """Casting Time"""
+    print("\nSpell Cast Times and their count\n")
     casting_time_counter = Counter(casting_time)
     for key, value in sorted(casting_time_counter.items()):
         print("{} appeard {} times".format(key, value))
 
     # """Duration"""
+    # print("\nSpell Durations and their count\n")
     # duration_counter = Counter(duration)
     # for key, value in sorted(duration_counter.items()):
     #     print("{} appeard {} times".format(key, value))
 
     # """Components"""
+    # print("\nSpell Components and their count\n")
     # components_counter = Counter(components)
         # for x in sorted(components_counter):
     #     print(x)
 
     # """Spell Range"""
+    # print("\nSpell Ranges and their count\n")
     # s_range_counter = Counter(s_range)
+    # print("\nSpell Ranges\n")
     # for x in sorted(s_range_counter):
     #     print(x)
 
