@@ -1,37 +1,22 @@
 #!/usr/bin/env python
 # import re
-import os
 from collections import Counter
-
-
-def get_files(path):
-    files = {}
-
-    # os.walk creates a generator.
-    # Each item in the generator is a tuple representing a folder.
-    # The 0 index is the relative path of the that folder.
-    # The 1 index is a list of folders in that folder.
-    # The 2 index is a list of all files in that folder.
-    for folder in os.walk(path):
-        for file_name in folder[2]:  # The 2nd index of folder lists files
-            if ".md" in file_name:
-                files[file_name] = "{}/{}".format(folder[0], file_name)
-
-    return files
+from data_utils import get_file_list
 
 
 def main():
-    in_path = "./data"
+    data_path = "./data"
+    data_ext = ['.md']
     # out_path = "./output"
 
-    files = get_files(in_path)
+    file_list = get_file_list(data_path, data_ext)
 
     duration = []
     components = []
     casting_time = []
     s_range = []
 
-    for path in files.values():
+    for path in file_list:
 
         with open(path, 'r') as f:
             content = [line.strip() for line in f if line.strip()]
