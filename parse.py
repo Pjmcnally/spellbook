@@ -47,22 +47,25 @@ def main():
                 elif line.startswith("**Components**"):
                     components.append(line[16:])
 
-    # casting_time_counter = Counter(casting_time)
-    # duration_counter = Counter(duration)
-    # components_counter = Counter(components)
-    s_range_counter = Counter(s_range)
+    """Casting Time"""
+    casting_time_counter = Counter(casting_time)
+    for key, value in sorted(casting_time_counter.items()):
+        print("{} appeard {} times".format(key, value))
 
+    # """Duration"""
+    # duration_counter = Counter(duration)
     # for key, value in sorted(duration_counter.items()):
     #     print("{} appeard {} times".format(key, value))
 
-    # for key, value in sorted(casting_time_counter.items()):
-    #     print("{} appeard {} times".format(key, value))
-
-    # for x in sorted(components_counter):
+    # """Components"""
+    # components_counter = Counter(components)
+        # for x in sorted(components_counter):
     #     print(x)
 
-    for x in sorted(s_range_counter):
-        print(x)
+    # """Spell Range"""
+    # s_range_counter = Counter(s_range)
+    # for x in sorted(s_range_counter):
+    #     print(x)
 
 
 if __name__ == '__main__':
