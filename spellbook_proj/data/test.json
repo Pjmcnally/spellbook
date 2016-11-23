@@ -1,0 +1,14 @@
+{
+    "name": "NAME", 
+    "source": {
+        "name": "NAME",
+        "page": "PAGE",
+    },
+    "concentration": "CONCENTRATION",
+    "ritual": "RITUAL",
+    "classes": ["CLASS", "CLASS", "CLASS"],
+    "domains": {
+        "CLASS": "DOMAIN",
+        "CLASS": "DOMAIN",
+    }
+}
