@@ -23,12 +23,9 @@ def get_or_create_casting_time(line):
     cast_time = match.group("cast_time")
     react_text = match.group("react_text")
 
-    obj, created = CastingTime.objects.get_or_create(text=cast_time)
+    obj, created = CastingTime.objects.get_or_create(text=x)
 
-    return obj
-
-    # print("{a}{b}".format(
-    #     a=cast_time, b=", " + react_text if react_text else ""))
+    return obj, react_text
 
 
 def main():
@@ -40,7 +37,8 @@ def main():
         with open(file_path, 'r') as f:
             content = [line.strip() for line in f if line.strip()]
 
-            get_or_create_casting_time(content[8])
+            cast_time = get_or_create_casting_time(content[8])
+            range_ = get_or_create_range(content[])
 
 if __name__ == '__main__':
     main()

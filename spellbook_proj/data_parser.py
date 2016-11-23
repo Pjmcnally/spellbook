@@ -20,23 +20,24 @@ def main():
 
         with open(path, 'r') as f:
             content = [line.strip() for line in f if line.strip()]
+            print(content[9])
 
-            for line in content:
-                if line.startswith("**Duration**"):
-                    output = line[14:].lower().replace("concentration, ", "")
-                    duration.append(output)
-                elif line.startswith("**Casting Time**"):
-                    casting_time.append(line[18:])
-                elif line.startswith("**Range**"):
-                    s_range.append(line[11:])
-                elif line.startswith("**Components**"):
-                    components.append(line[16:])
+    #         for line in content:
+    #             if line.startswith("**Duration**"):
+    #                 output = line[14:].lower().replace("concentration, ", "")
+    #                 duration.append(output)
+    #             elif line.startswith("**Casting Time**"):
+    #                 casting_time.append(line[18:])
+    #             elif line.startswith("**Range**"):
+    #                 s_range.append(line[11:])
+    #             elif line.startswith("**Components**"):
+    #                 components.append(line[16:])
 
-    """Casting Time"""
-    print("\nSpell Cast Times and their count\n")
-    casting_time_counter = Counter(casting_time)
-    for key, value in sorted(casting_time_counter.items()):
-        print("{} appeard {} times".format(key, value))
+    # """Casting Time"""
+    # print("\nSpell Cast Times and their count\n")
+    # casting_time_counter = Counter(casting_time)
+    # for key, value in sorted(casting_time_counter.items()):
+    #     print("{} appeard {} times".format(key, value))
 
     # """Duration"""
     # print("\nSpell Durations and their count\n")
