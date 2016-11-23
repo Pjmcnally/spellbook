@@ -5,7 +5,7 @@ from data_utils import get_file_list
 
 
 def main():
-    data_path = "./data"
+    data_path = "./data/raw_data"
     data_ext = ['.md']
     # out_path = "./output"
 
@@ -20,7 +20,24 @@ def main():
 
         with open(path, 'r') as f:
             content = [line.strip() for line in f if line.strip()]
-            print(content[9])
+
+            # range_pat = re.compile(
+            #     '\*\*Range\*\*:\s+'
+            #     '(?P<_range>[\d\w\s]+)'
+            #     '[\s()]*'
+            #     '(?P<range_text>[\d\w\s\-]+)')
+
+            cast_time_pat = re.compile(
+                '\*\*Casting Time\*\*:\s+'
+                '(?P<cast_time>[\d\w\s]+)'
+                '[,\s]*'
+                '(?P<react_text>[\d\w\s,]*)')
+
+            match = re.search(cast_time_pat, content[8])
+            cast_time = match.group("cast_time")
+            react_text = match.group("react_text")
+
+            print(cast_time, react_text)
 
     #         for line in content:
     #             if line.startswith("**Duration**"):
