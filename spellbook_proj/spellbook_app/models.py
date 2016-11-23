@@ -44,6 +44,21 @@ class Component(models.Model):
         ordering = ['full_name']
 
 
+class Domain(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+    slug = models.SlugField(
+        max_length=20,
+        unique=True,
+        help_text='A lable for URL config',)
+    _class = models.ForeignKey('Class', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} ({})".format(self._class, self.name)
+
+    class Meta:
+        ordering = ['_class', 'name']
+
+
 class Duration(models.Model):
     text = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(
@@ -145,16 +160,29 @@ class Spell(models.Model):
     range_misc = models.CharField(max_length=100)
 
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
-    _class = models.ForeignKey('Class', on_delete=models.CASCADE)
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)
     level = models.ForeignKey('Level', on_delete=models.CASCADE)
     _range = models.ForeignKey('Range', on_delete=models.CASCADE)
     school = models.ForeignKey('school', on_delete=models.CASCADE)
 
+    _class = models.ManyToManyField(
+        'Class',
+        related_name="_class")
+    component = models.ManyToManyField(
+        'Component',
+        related_name='component')
+    domain = models.ManyToManyField(
+        'Domain',
+        related_name='domain',
+        blank=True)
     source = models.ManyToManyField(
         'Source',
         through='SpellSource',
         related_name='source')
-    component = models.ManyToManyField(
-        'Component',
-        related_name='component')
+
+    def __str__(self):
+        return self.name
+
+    def output_json(self):
+        # check out https://docs.djangoproject.com/en/1.10/topics/files/
+        pass
