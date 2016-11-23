@@ -3,16 +3,53 @@ from django.db import models
 
 class CastingTime(models.Model):
     text = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(
+        max_length=100,
+        unique=True,
+        help_text='A label for URL config')
 
     def __str__(self):
         return self.text
 
     class Meta:
         ordering = ['text']
+
+
+class Class(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+    slug = models.SlugField(
+        max_length=20,
+        unique=True,
+        help_text='A lable for URL config',)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+
+
+class Component(models.Model):
+    full_name = models.CharField(max_length=20, unique=True)
+    short_name = models.CharField(max_length=1, unique=True)
+    slug = models.SlugField(
+        max_length=20,
+        unique=True,
+        help_text='A lable for URL config',)
+
+    def __str__(self):
+        return self.full_name
+
+    class Meta:
+        ordering = ['full_name']
 
 
 class Duration(models.Model):
     text = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(
+        max_length=100,
+        unique=True,
+        help_text='A label for URL config')
 
     def __str__(self):
         return self.text
@@ -21,8 +58,26 @@ class Duration(models.Model):
         ordering = ['text']
 
 
-class SpellRange(models.Model):
+class Level(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+    slug = models.SlugField(
+        max_length=20,
+        unique=True,
+        help_text='A lable for URL config',)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+
+
+class Range(models.Model):
     text = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(
+        max_length=100,
+        unique=True,
+        help_text='A label for URL config')
 
     def __str__(self):
         return self.text
@@ -45,36 +100,9 @@ class School(models.Model):
         ordering = ['name']
 
 
-class CharClass(models.Model):
-    name = models.CharField(max_length=20, unique=True)
-    slug = models.SlugField(
-        max_length=20,
-        unique=True,
-        help_text='A lable for URL config',)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name']
-
-
-class Level(models.Model):
-    name = models.CharField(max_length=20, unique=True)
-    slug = models.SlugField(
-        max_length=20,
-        unique=True,
-        help_text='A lable for URL config',)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name']
-
-
 class Source(models.Model):
-    name = models.CharField(max_length=20, unique=True)
+    full_name = models.CharField(max_length=100, unique=True)
+    short_name = models.CharField(max_length=10, unique=True)
     slug = models.SlugField(
         max_length=20,
         unique=True,
@@ -83,10 +111,10 @@ class Source(models.Model):
     public = models.BooleanField()
 
     def __str__(self):
-        return self.name
+        return self.short_name
 
     class Meta:
-        ordering = ['name']
+        ordering = ['short_name']
 
 
 class SpellSource(models.Model):
@@ -102,28 +130,6 @@ class SpellSource(models.Model):
         ordering = ['source', 'spell']
 
 
-class Component(models.Model):
-    text = models.CharField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.text
-
-    class Meta:
-        ordering = ['text']
-
-
-class SpellComponent(models.Model):
-    component = models.ForeignKey('Component', on_delete=models.CASCADE)
-    spell = models.ForeignKey('Spell', on_delete=models.CASCADE)
-    text = models.CharField(max_length=100, blank=True)
-
-    def __str__(self):
-        return "{} requires {}".format(self.spell, self.text)
-
-    class Meta:
-        ordering = ['component']
-
-
 class Spell(models.Model):
     Name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(
@@ -131,19 +137,24 @@ class Spell(models.Model):
         unique=True,
         help_text='A lable for URL config',)
     text = models.TextField()
-    ritual = models.BooleanField()
     concentration = models.BooleanField()
+    ritual = models.BooleanField()
+
+    cast_time_misc = models.CharField(max_length=100)
+    component_misc = models.CharField(max_length=100)
+    range_misc = models.CharField(max_length=100)
+
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
+    _class = models.ForeignKey('Class', on_delete=models.CASCADE)
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)
-    spell_range = models.ForeignKey('SpellRange', on_delete=models.CASCADE)
-    school = models.ForeignKey('school', on_delete=models.CASCADE)
-    char_class = models.ForeignKey('CharClass', on_delete=models.CASCADE)
     level = models.ForeignKey('Level', on_delete=models.CASCADE)
+    _range = models.ForeignKey('Range', on_delete=models.CASCADE)
+    school = models.ForeignKey('school', on_delete=models.CASCADE)
+
     source = models.ManyToManyField(
         'Source',
         through='SpellSource',
         related_name='source')
     component = models.ManyToManyField(
         'Component',
-        through='SpellComponent',
         related_name='component')
