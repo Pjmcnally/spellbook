@@ -151,7 +151,7 @@ def open_file(path):
     return content
 
 
-def get_or_create_spell(content):
+def create_spell(content):
     tags = parse_tags(content[5])
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
@@ -163,13 +163,10 @@ def get_or_create_spell(content):
     range_, react_text = get_or_create_range(content[12])
     text = "".join(content[18:])
 
-
     # spell = Spell.objects.get_or_create(
     #     name=name,
     #     slug=slugify(name),
     #     text=text,
-
-
 
 
 def main():
@@ -179,7 +176,7 @@ def main():
     file_list = get_file_list(data_path, data_ext)
     for file_path in file_list:
         content = open_file(file_path)
-        spell = get_or_create_spell(content)
+        create_spell(content)
 
 
 if __name__ == '__main__':
