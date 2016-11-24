@@ -27,17 +27,17 @@ def main():
             #     '[\s()]*'
             #     '(?P<range_text>[\d\w\s\-]+)')
 
-            cast_time_pat = re.compile(
-                '\*\*Casting Time\*\*:\s+'
-                '(?P<cast_time>[\d\w\s]+)'
-                '[,\s]*'
-                '(?P<react_text>[\d\w\s,]*)')
+            # cast_time_pat = re.compile(
+            #     '\*\*Casting Time\*\*:\s+'
+            #     '(?P<cast_time>[\d\w\s]+)'
+            #     '[,\s]*'
+            #     '(?P<react_text>[\d\w\s,]*)')
 
-            match = re.search(cast_time_pat, content[8])
-            cast_time = match.group("cast_time")
-            react_text = match.group("react_text")
+            # match = re.search(cast_time_pat, content[8])
+            # cast_time = match.group("cast_time")
+            # react_text = match.group("react_text")
 
-            print(cast_time, react_text)
+            # print(cast_time, react_text)
 
     #         for line in content:
     #             if line.startswith("**Duration**"):
