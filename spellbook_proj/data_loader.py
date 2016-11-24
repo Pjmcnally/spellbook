@@ -144,16 +144,32 @@ def get_name(string):
     return match.group('name')
 
 
-def get_text(strings):
-    output = ""
+def open_file(path):
+    with open(path, 'r') as f:
+        content = f.readlines()
 
-    for string in strings:
-        if output:
-            output += "\n\n" + string
-        else:
-            output = string
+    return content
 
-    return output
+
+def get_or_create_spell(content):
+    tags = parse_tags(content[5])
+    classes = get_or_create_classes(tags)
+    sub_domains = get_or_create_domains(tags)
+
+    name = get_name(content[2])
+    level = get_or_create_level(content[8])
+    # school = get_or_create_school(content[7])
+    cast_time, react_text = get_or_create_casting_time(content[10])
+    range_, react_text = get_or_create_range(content[12])
+    text = "".join(content[18:])
+
+
+    # spell = Spell.objects.get_or_create(
+    #     name=name,
+    #     slug=slugify(name),
+    #     text=text,
+
+
 
 
 def main():
@@ -162,29 +178,8 @@ def main():
 
     file_list = get_file_list(data_path, data_ext)
     for file_path in file_list:
-        with open(file_path, 'r') as f:
-            content = [line.strip() for line in f if line.strip()]
-            tags = parse_tags(content[5])
-
-            level = get_or_create_level(content[7])
-            # school = get_or_create_school(content[7])
-
-            cast_time, react_text = get_or_create_casting_time(content[8])
-            range_, react_text = get_or_create_range(content[9])
-
-            classes = get_or_create_classes(tags)
-            sub_domains = get_or_create_domains(tags)
-
-            name = get_name(content[2])
-            text = get_text(content[12:])
-            print(text)
-            print(repr(text))
-            a = input()
-
-            # spell = Spell.objects.get_or_create(
-            #     name=name,
-            #     slug=slugify(name),
-            #     text=text,
+        content = open_file(file_path)
+        spell = get_or_create_spell(content)
 
 
 if __name__ == '__main__':
