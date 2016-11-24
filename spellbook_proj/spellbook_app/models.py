@@ -23,7 +23,7 @@ class Class(models.Model):
         help_text='A lable for URL config',)
 
     def __str__(self):
-        return self.name
+        return self.name.title()
 
     class Meta:
         ordering = ['name']
@@ -50,13 +50,12 @@ class Domain(models.Model):
         max_length=20,
         unique=True,
         help_text='A lable for URL config',)
-    _class = models.ForeignKey('Class', on_delete=models.CASCADE)
 
     def __str__(self):
-        return "{} ({})".format(self._class, self.name)
+        return self.name.title()
 
     class Meta:
-        ordering = ['_class', 'name']
+        ordering = ['name']
 
 
 class Duration(models.Model):
@@ -74,17 +73,19 @@ class Duration(models.Model):
 
 
 class Level(models.Model):
-    name = models.CharField(max_length=20, unique=True)
+    text = models.CharField(max_length=20, unique=True)
+    ord_text = models.CharField(max_length=20, unique=True)
     slug = models.SlugField(
         max_length=20,
         unique=True,
         help_text='A lable for URL config',)
+    num = models.SmallIntegerField()
 
     def __str__(self):
-        return self.name
+        return self.ord_text
 
     class Meta:
-        ordering = ['name']
+        ordering = ['num']
 
 
 class Range(models.Model):
@@ -109,7 +110,7 @@ class School(models.Model):
         help_text='A lable for URL config',)
 
     def __str__(self):
-        return self.name
+        return self.name.title()
 
     class Meta:
         ordering = ['name']
@@ -145,8 +146,23 @@ class SpellSource(models.Model):
         ordering = ['source', 'spell']
 
 
+class SubDomain(models.Model):
+    name = models.CharField(max_length=20)
+    slug = models.SlugField(
+        max_length=20,
+        help_text='A lable for URL config',)
+    domain = models.ForeignKey('Domain', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{} ({})".format(self.domain, self.name.title())
+
+    class Meta:
+        unique_together = (('slug', 'domain'), ('name', 'domain'))
+        ordering = ['domain', 'name']
+
+
 class Spell(models.Model):
-    Name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(
         max_length=100,
         unique=True,
@@ -163,7 +179,7 @@ class Spell(models.Model):
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)
     level = models.ForeignKey('Level', on_delete=models.CASCADE)
     _range = models.ForeignKey('Range', on_delete=models.CASCADE)
-    school = models.ForeignKey('school', on_delete=models.CASCADE)
+    school = models.ForeignKey('School', on_delete=models.CASCADE)
 
     _class = models.ManyToManyField(
         'Class',
@@ -171,9 +187,9 @@ class Spell(models.Model):
     component = models.ManyToManyField(
         'Component',
         related_name='component')
-    domain = models.ManyToManyField(
-        'Domain',
-        related_name='domain',
+    sub_domain = models.ManyToManyField(
+        'SubDomain',
+        related_name='sub_domain',
         blank=True)
     source = models.ManyToManyField(
         'Source',
