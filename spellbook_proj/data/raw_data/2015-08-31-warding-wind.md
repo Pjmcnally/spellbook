@@ -6,7 +6,7 @@ source: EE.23
 tags: [bard, druid, sorcerer, level2, ]
 ---
 
-**2nd level evocation**
+**2nd-level evocation**
 
 **Casting Time**: 1 action
 
