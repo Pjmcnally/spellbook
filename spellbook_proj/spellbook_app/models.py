@@ -171,9 +171,9 @@ class Spell(models.Model):
     concentration = models.BooleanField()
     ritual = models.BooleanField()
 
-    cast_time_misc = models.CharField(max_length=100)
-    component_misc = models.CharField(max_length=100)
-    range_misc = models.CharField(max_length=100)
+    cast_time_sup = models.CharField(max_length=100)
+    component_sup = models.CharField(max_length=100)
+    range_sup = models.CharField(max_length=100)
 
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)

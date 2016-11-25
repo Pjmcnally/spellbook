@@ -151,22 +151,53 @@ def open_file(path):
     return content
 
 
+def get_or_create_duration(string):
+    duration_pat = re.compile(
+        '\*\*Duration\*\*:'
+        '\s+'
+        '(?P<concentration>Concentration,)*'
+        '\s*'
+        '(?P<duration>[\w\s]+)')
+
+    match = re.search(duration_pat, string)
+
+    concentration = bool(match.group('concentration'))
+    duration = match.group('duration').lower()
+
+    obj, created = Duration.objects.get_or_create(
+        text=duration,
+        slug=slugify(duration))
+
+    return obj, concentration
+
+
 def create_spell(content):
     tags = parse_tags(content[5])
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
 
     name = get_name(content[2])
+    text = "".join(content[18:])
+    ritual = "ritual" in content[8].lower()
     level = get_or_create_level(content[8])
     # school = get_or_create_school(content[7])
     cast_time, react_text = get_or_create_casting_time(content[10])
     range_, react_text = get_or_create_range(content[12])
-    text = "".join(content[18:])
+
+    duration, concentration = get_or_create_duration(content[16])
 
     # spell = Spell.objects.get_or_create(
     #     name=name,
     #     slug=slugify(name),
     #     text=text,
+    #     concentration=concentration,
+    #     ritual=ritual,
+    #     cast_time_sup=react_text
+    #     component_sup=<<WRITE THIS PART NEXT>>
+
+    #     range_sup=
+
+
 
 
 def main():
