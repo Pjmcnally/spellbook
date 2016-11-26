@@ -3,7 +3,7 @@ layout: post
 title: "Scrying"
 date: 2015-07-30
 source: PHB.273
-tags: [bard, cleric, cleric (knowledge), cleric (light), druid, druid (coast), druid (swamp), paladin (devotion), paladin (vengeance), warlock, wizard, level5, divination]
+tags: [bard, cleric, cleric (knowledge), cleric (light), druid, druid (coast), druid (swamp), paladin (vengeance), warlock, wizard, level5, divination]
 ---
 
 **5th-level divination**
