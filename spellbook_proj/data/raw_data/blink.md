@@ -3,7 +3,7 @@ layout: post
 title:  "Blink"
 date:   2015-01-01
 source: PHB.219
-tags: [cleric (trickery), sorcerer, warlock (fae), wizard, level3, transmutation]
+tags: [cleric (trickery), sorcerer, warlock (archfey), wizard, level3, transmutation]
 ---
 
 **3rd-level transmutation**

@@ -3,7 +3,7 @@ layout: post
 title: "Commune"
 date: 2015-07-14
 source: PHB.223
-tags: [cleric, level5, ritual, divination]
+tags: [cleric, paladin (devotion), level5, ritual, divination]
 ---
 
 **5th-level divination (ritual)**

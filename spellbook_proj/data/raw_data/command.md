@@ -3,7 +3,7 @@ layout: post
 title:  "Command"
 date:   2014-08-24
 source: PHB.223
-tags: [cleric, cleric (knowledge), paladin, warlock (fiend), level1, enchantment]
+tags: [cleric, cleric (knowledge), paladin, paladin (crown), warlock (fiend), level1, enchantment]
 ---
 
 **1st-level enchantment**
