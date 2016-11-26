@@ -171,6 +171,41 @@ def get_or_create_duration(string):
     return obj, concentration
 
 
+def get_or_create_components(string):
+    comp_objs = []
+    comp_pat = re.compile(
+        '\*\*Components\*\*\:\s+'
+        '(?P<components>[\s\w,]+)'
+        '\(*'
+        '(?P<comp_text>[^\)]*)'
+        '\)*')
+
+    match = re.search(comp_pat, string)
+    comp_string = match.group('components')
+    comp_text = match.group('comp_text')
+
+    if "V" in comp_string:
+        v_obj, created = Component.objects.get_or_create(
+            full_name="verbal",
+            short_name="V",
+            slug="v")
+        comp_objs.append(v_obj)
+    if "S" in comp_string:
+        s_obj, created = Component.objects.get_or_create(
+            full_name="somatic",
+            short_name="S",
+            slug="s")
+        comp_objs.append(s_obj)
+    if "M" in comp_string:
+        m_obj, created = Component.objects.get_or_create(
+            full_name="material",
+            short_name="M",
+            slug="m")
+        comp_objs.append(m_obj)
+
+    return comp_objs, comp_text
+
+
 def create_spell(content):
     tags = parse_tags(content[5])
     classes = get_or_create_classes(tags)
@@ -180,28 +215,32 @@ def create_spell(content):
     text = "".join(content[18:])
     ritual = "ritual" in content[8].lower()
     level = get_or_create_level(content[8])
-    # school = get_or_create_school(content[7])
+    school = get_or_create_school(content[7])
     cast_time, react_text = get_or_create_casting_time(content[10])
-    range_, react_text = get_or_create_range(content[12])
+    _range, range_text = get_or_create_range(content[12])
 
     duration, concentration = get_or_create_duration(content[16])
+    components, component_text = get_or_create_components(content[14])
 
-    # spell = Spell.objects.get_or_create(
-    #     name=name,
-    #     slug=slugify(name),
-    #     text=text,
-    #     concentration=concentration,
-    #     ritual=ritual,
-    #     cast_time_sup=react_text
-    #     component_sup=<<WRITE THIS PART NEXT>>
-
-    #     range_sup=
-
-
+    spell, created = Spell.objects.get_or_create(
+        name=name,
+        slug=slugify(name),
+        text=text,
+        concentration=concentration,
+        ritual=ritual,
+        cast_time_text=react_text,
+        component_text=component_text,
+        range_text=range_text,
+        casting_time=cast_time,
+        duration=duration,
+        level=level,
+        _range=_range,
+        school=school,
+    )
 
 
 def main():
-    data_path = './data/raw_data'
+    data_path = './data/markdown_data'
     data_ext = ['.md']
 
     file_list = get_file_list(data_path, data_ext)
