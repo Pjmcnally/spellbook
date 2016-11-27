@@ -33,7 +33,7 @@ class Component(models.Model):
     full_name = models.CharField(max_length=20, unique=True)
     short_name = models.CharField(max_length=1, unique=True)
     slug = models.SlugField(
-        max_length=20,
+        max_length=1,
         unique=True,
         help_text='A lable for URL config',)
 
@@ -171,9 +171,9 @@ class Spell(models.Model):
     concentration = models.BooleanField()
     ritual = models.BooleanField()
 
-    cast_time_sup = models.CharField(max_length=100)
-    component_sup = models.CharField(max_length=100)
-    range_sup = models.CharField(max_length=100)
+    cast_time_text = models.CharField(max_length=100, null=True)
+    component_text = models.CharField(max_length=100, null=True)
+    range_text = models.CharField(max_length=100, null=True)
 
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)
@@ -191,13 +191,16 @@ class Spell(models.Model):
         'SubDomain',
         related_name='sub_domain',
         blank=True)
-    source = models.ManyToManyField(
-        'Source',
-        through='SpellSource',
-        related_name='source')
+    # source = models.ManyToManyField(
+    #     'Source',
+    #     through='SpellSource',
+    #     related_name='source')
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['level', 'name']
 
     def output_json(self):
         # check out https://docs.djangoproject.com/en/1.10/topics/files/
