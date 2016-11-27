@@ -206,16 +206,34 @@ def get_or_create_components(string):
     return comp_objs, comp_text
 
 
+def get_or_create_school(string):
+    school_pat = re.compile(
+        '.*'
+        '(?P<school>abjuration|conjuration|divination|enchantment|'
+        'evocation|illusion|necromancy|transmutation)'
+        '.*')
+
+    match = re.search(school_pat, string.lower())
+    school = match.group('school')
+
+    obj, created = School.objects.get_or_create(
+        name=school,
+        slug=slugify(school)
+        )
+
+    print(obj)
+
+    return obj
+
+
 def create_spell(content):
     tags = parse_tags(content[5])
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
 
     name = get_name(content[2])
-    text = "".join(content[18:])
-    ritual = "ritual" in content[8].lower()
     level = get_or_create_level(content[8])
-    school = get_or_create_school(content[7])
+    school = get_or_create_school(content[8])
     cast_time, react_text = get_or_create_casting_time(content[10])
     _range, range_text = get_or_create_range(content[12])
 
@@ -225,9 +243,9 @@ def create_spell(content):
     spell, created = Spell.objects.get_or_create(
         name=name,
         slug=slugify(name),
-        text=text,
+        text="".join(content[18:]),
         concentration=concentration,
-        ritual=ritual,
+        ritual="ritual" in content[8].lower(),
         cast_time_text=react_text,
         component_text=component_text,
         range_text=range_text,
@@ -238,6 +256,17 @@ def create_spell(content):
         school=school,
     )
 
+    for item in classes:
+        spell._class.add(item)
+
+    for item in components:
+        spell.component.add(item)
+
+    for item in sub_domains:
+        spell.sub_domain.add(item)
+
+    return spell
+
 
 def main():
     data_path = './data/markdown_data'
@@ -246,7 +275,8 @@ def main():
     file_list = get_file_list(data_path, data_ext)
     for file_path in file_list:
         content = open_file(file_path)
-        create_spell(content)
+        spell = create_spell(content)
+        print(spell)
 
 
 if __name__ == '__main__':
