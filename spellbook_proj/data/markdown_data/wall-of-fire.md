@@ -2,7 +2,7 @@
 layout: post
 title: "Wall of Fire"
 date: 2015-07-30
-source: PHB.285
+source: PHB.285, BASIC.104
 tags: [cleric (light), druid, monk (four elements), sorcerer, warlock (fiend), wizard, level4, evocation]
 ---
 

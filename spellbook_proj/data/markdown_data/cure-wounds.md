@@ -2,7 +2,7 @@
 layout: post
 title:  "Cure Wounds"
 date:   2014-08-24
-source: PHB.230
+source: PHB.230, BASIC.86
 tags: [bard, cleric, cleric (life), druid, paladin, ranger, level1, evocation]
 ---
 

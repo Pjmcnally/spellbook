@@ -2,7 +2,7 @@
 layout: post
 title: "Stoneskin"
 date: 2015-07-30
-source: PHB.278
+source: PHB.278, BASIC.102
 tags: [cleric (war), druid, druid (mountain), monk (four elements), paladin (ancients), sorcerer, ranger, wizard, level4, abjuration]
 ---
 

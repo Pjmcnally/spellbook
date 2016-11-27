@@ -2,7 +2,7 @@
 layout: post
 title:  "Hold Person"
 date:   2014-12-31
-source: PHB.251
+source: PHB.251, BASIC.93
 tags: [bard, cleric, druid, druid (arctic), monk (four elements), paladin (vengeance), sorcerer, warlock, wizard, level2, enchantment]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Raise Dead"
 date: 2015-07-30
-source: PHB.270
+source: PHB.270, BASIC.99
 tags: [cleric, cleric (life), paladin, bard, level5, necromancy]
 ---
 

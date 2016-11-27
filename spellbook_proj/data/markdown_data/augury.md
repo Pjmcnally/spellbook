@@ -2,7 +2,7 @@
 layout: post
 title:  "Augury"
 date:   2014-12-31
-source: PHB.215
+source: PHB.215, BASIC.84
 tags: [cleric, cleric (knowledge), level2, ritual, divination]
 ---
 

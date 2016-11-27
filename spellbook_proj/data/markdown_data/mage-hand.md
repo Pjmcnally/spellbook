@@ -2,7 +2,7 @@
 layout: post
 title:  "Mage Hand"
 date:   2014-08-24
-source: PHB.256
+source: PHB.256, BASIC.96
 tags: [bard, sorcerer, warlock, wizard, cantrip, conjuration]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Resistance"
 date:   2014-08-24
-source: PHB.272
+source: PHB.272, BASIC.99
 tags: [cleric, druid, cantrip, abjuration]
 ---
 

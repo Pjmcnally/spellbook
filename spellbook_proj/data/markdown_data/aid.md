@@ -2,7 +2,7 @@
 layout: post
 title:  "Aid"
 date:   2014-12-31
-source: PHB.211
+source: PHB.211, BASIC.83
 tags: [cleric, paladin, level2, abjuration]
 ---
 

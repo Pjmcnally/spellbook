@@ -2,7 +2,7 @@
 layout: post
 title:  "Shield"
 date:   2014-08-24
-source: PHB.275
+source: PHB.275, BASIC.100
 tags: [sorcerer, wizard, level1, abjuration]
 ---
 

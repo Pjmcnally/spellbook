@@ -2,7 +2,7 @@
 layout: post
 title:  "Astral Projection"
 date:   2015-01-09
-source: PHB.215
+source: PHB.215, BASIC.84
 tags:   [cleric, warlock, wizard, level9, necromancy]
 ---
 

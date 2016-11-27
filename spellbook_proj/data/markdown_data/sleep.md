@@ -2,7 +2,7 @@
 layout: post
 title:  "Sleep"
 date:   2014-08-24
-source: PHB.276
+source: PHB.276, BASIC.101
 tags: [bard, sorcerer, warlock (archfey), wizard, level1, enchantment]
 ---
 

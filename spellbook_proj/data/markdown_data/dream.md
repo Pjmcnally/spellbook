@@ -2,7 +2,7 @@
 layout: post
 title: "Dream"
 date: 2015-07-14
-source: PHB.236
+source: PHB.236, BASIC.89
 tags: [bard, druid (grassland), warlock, wizard, level5, illusion]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Mage Armor"
 date:   2014-08-24
-source: PHB.256
+source: PHB.256, BASIC.95
 tags: [sorcerer, wizard, level1, abjuration]
 ---
 

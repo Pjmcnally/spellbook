@@ -2,7 +2,7 @@
 layout: post
 title:  "Magic Missile"
 date:   2014-08-24
-source: PHB.257
+source: PHB.257, BASIC.96
 tags: [cleric (arcana), sorcerer, wizard, level1, evocation]
 ---
 

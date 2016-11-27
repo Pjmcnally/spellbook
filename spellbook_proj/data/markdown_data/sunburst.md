@@ -2,7 +2,7 @@
 layout: post
 title:  "Sunburst"
 date:   2015-01-10
-source: PHB.279
+source: PHB.279, BASIC.102
 tags:   [druid, sorcerer, wizard, level8, evocation]
 ---
 

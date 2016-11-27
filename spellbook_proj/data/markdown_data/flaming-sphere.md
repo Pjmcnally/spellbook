@@ -2,7 +2,7 @@
 layout: post
 title: "Flaming Sphere"
 date: 2015-07-14
-source: PHB.242
+source: PHB.242, BASIC.91
 tags: [cleric (light), druid, wizard, level2, conjuration]
 ---
 

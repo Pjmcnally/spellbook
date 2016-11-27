@@ -2,7 +2,7 @@
 layout: post
 title:  "Healing Word"
 date:   2014-08-24
-source: PHB.250
+source: PHB.250, BASIC.93
 tags: [bard, cleric, druid, level1, evocation]
 ---
 

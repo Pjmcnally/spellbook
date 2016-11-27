@@ -2,7 +2,7 @@
 layout: post
 title:  "Ray of Frost"
 date:   2014-08-24
-source: PHB.271
+source: PHB.271, BASIC.99
 tags: [sorcerer, wizard, cantrip, evocation]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Freedom of Movement"
 date: 2015-07-14
-source: PHB.244
+source: PHB.244, BASIC.91
 tags: [bard, cleric, cleric (war), druid, druid (arctic), druid (coast), druid (forest), druid (grassland), druid (swamp), paladin (devotion), ranger, level4, abjuration]
 ---
 

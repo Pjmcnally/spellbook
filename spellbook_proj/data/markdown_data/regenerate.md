@@ -2,7 +2,7 @@
 layout: post
 title:  "Regenerate"
 date:   2015-01-11
-source: PHB.271
+source: PHB.271, BASIC.99
 tags:   [bard, cleric, druid, level7, transmutation]
 ---
 

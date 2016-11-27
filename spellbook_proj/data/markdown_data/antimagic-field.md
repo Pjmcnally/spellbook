@@ -2,7 +2,7 @@
 layout: post
 title:  "Antimagic Field"
 date:   2015-01-09
-source: PHB.213
+source: PHB.213, BASIC.83
 tags: [cleric, wizard, level8, abjuration]
 ---
 

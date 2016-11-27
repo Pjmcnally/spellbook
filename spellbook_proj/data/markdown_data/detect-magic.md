@@ -2,7 +2,7 @@
 layout: post
 title:  "Detect Magic"
 date:   2014-08-24
-source: PHB.231
+source: PHB.231, BASIC.87
 tags: [bard, cleric, cleric (arcana), druid, paladin, ranger, sorcerer, wizard, level1, ritual, divination]
 ---
 

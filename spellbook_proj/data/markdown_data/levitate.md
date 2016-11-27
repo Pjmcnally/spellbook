@@ -2,7 +2,7 @@
 layout: post
 title: "Levitate"
 date: 2015-07-30
-source: PHB.255
+source: PHB.255, BASIC.95
 tags: [genasai (air), sorcerer, wizard, level2, transmutation]
 ---
 

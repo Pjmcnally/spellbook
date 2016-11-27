@@ -2,7 +2,7 @@
 layout: post
 title: "Heroes' Feast"
 date: 2015-07-30
-source: PHB.251
+source: PHB.251, BASIC.93
 tags: [cleric, druid, level6, conjuration]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Resurrection"
 date:   2015-01-11
-source: PHB.272
+source: PHB.272, BASIC.99
 tags:   [bard, cleric, druid, level7, necromancy]
 ---
 

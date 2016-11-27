@@ -2,7 +2,7 @@
 layout: post
 title:  "Identify"
 date:   2014-08-24
-source: PHB.252
+source: PHB.252, BASIC.94
 tags: [bard, cleric (knowledge), wizard, level1, ritual, divination]
 ---
 

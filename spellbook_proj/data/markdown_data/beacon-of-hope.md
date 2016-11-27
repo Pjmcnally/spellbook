@@ -2,7 +2,7 @@
 layout: post
 title:  "Beacon of Hope"
 date:   2015-01-01
-source: PHB.217
+source: PHB.217, BASIC.84
 tags: [cleric, cleric (life), paladin (devotion), level3, abjuration]
 ---
 

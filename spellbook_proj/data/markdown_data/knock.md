@@ -2,7 +2,7 @@
 layout: post
 title: "Knock"
 date: 2015-07-30
-source: PHB.254
+source: PHB.254, BASIC.95
 tags: [bard, sorcerer, wizard, level2, transmutation]
 ---
 

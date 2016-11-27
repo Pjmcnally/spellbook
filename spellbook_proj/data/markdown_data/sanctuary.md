@@ -2,7 +2,7 @@
 layout: post
 title:  "Sanctuary"
 date:   2014-08-24
-source: PHB.272
+source: PHB.272, BASIC.100
 tags: [cleric, paladin (devotion), level1, abjuration]
 ---
 

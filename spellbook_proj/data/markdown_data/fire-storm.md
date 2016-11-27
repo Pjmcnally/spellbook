@@ -2,7 +2,7 @@
 layout: post
 title:  "Fire Storm"
 date:   2015-01-11
-source: PHB.241
+source: PHB.241, BASIC.90
 tags:   [cleric, druid, sorcerer, level7, evocation]
 ---
 

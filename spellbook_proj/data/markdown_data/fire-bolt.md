@@ -2,7 +2,7 @@
 layout: post
 title:  "Fire Bolt"
 date:   2015-01-07
-source: PHB.241
+source: PHB.241, BASIC.90
 tags: [sorcerer, wizard, cantrip, evocation]
 ---
 

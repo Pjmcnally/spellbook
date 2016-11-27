@@ -2,7 +2,7 @@
 layout: post
 title:  "Spiritual Weapon"
 date:   2014-12-31
-source: PHB.278
+source: PHB.278, BASIC.102
 tags: [cleric, cleric (life), cleric (war), level2, evocation]
 ---
 

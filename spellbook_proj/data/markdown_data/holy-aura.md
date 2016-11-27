@@ -2,7 +2,7 @@
 layout: post
 title:  "Holy Aura"
 date:   2015-01-10
-source: PHB.251
+source: PHB.251, BASIC.93
 tags:   [cleric, level8, abjuration]
 ---
 
