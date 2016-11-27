@@ -2,7 +2,7 @@
 layout: post
 title:  "Guidance"
 date:   2014-08-24
-source: PHB.248
+source: PHB.248, BASIC.92
 tags: [cleric, druid, cantrip, divination]
 ---
 
