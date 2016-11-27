@@ -221,9 +221,60 @@ def get_or_create_school(string):
         slug=slugify(school)
         )
 
-    print(obj)
-
     return obj
+
+
+def get_or_create_sources(string):
+    source_dict = {
+        'PHB': {
+            'full_name': "Player's Handbook",
+            'short_name': 'PHB',
+            'slug': 'phb',
+            'link': 'https://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook',
+            'public': False},
+        'SCAG': {
+            'full_name': "Sword Coast Adventurer's Guide",
+            'short_name': 'SCAG',
+            'slug': 'scag',
+            'link': 'https://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide',
+            'public': False},
+        'EE': {
+            'full_name': "Elemental Evil Player's Companion",
+            'short_name': 'EE',
+            'slug': 'ee',
+            'link': 'https://dnd.wizards.com/articles/features/elementalevil_playerscompanion',
+            'public': True},
+        'BASIC': {
+            'full_name': 'Basic Rules for Dungeons and Dragons',
+            'short_name': 'BASIC',
+            'slug': 'basic',
+            'link': 'https://dnd.wizards.com/articles/features/basicrules',
+            'public': True}
+    }
+
+    source_pat = re.compile(
+        '(?P<source>[A-Z]+)'
+        '\.'
+        '(?P<page>[\d]+)')
+
+    sources = []
+
+    for item in string[8:].strip().split(", "):
+        match = re.search(source_pat, item)
+
+        source = match.group('source')
+        page = match.group('page')
+
+        source_obj, created = Source.objects.get_or_create(
+            full_name=source_dict[source]['full_name'],
+            short_name=source_dict[source]['short_name'],
+            slug=source_dict[source]['slug'],
+            link=source_dict[source]['link'],
+            public=source_dict[source]['public'])
+
+        sources.append((source_obj, page))
+
+    return sources
 
 
 def create_spell(content):
@@ -239,6 +290,7 @@ def create_spell(content):
 
     duration, concentration = get_or_create_duration(content[16])
     components, component_text = get_or_create_components(content[14])
+    sources = get_or_create_sources(content[4])
 
     spell, created = Spell.objects.get_or_create(
         name=name,
@@ -265,8 +317,14 @@ def create_spell(content):
     for item in sub_domains:
         spell.sub_domain.add(item)
 
-    return spell
+    for source, page in sources:
+        spell_source, created = SpellSource.objects.get_or_create(
+            spell=spell,
+            source=source,
+            page=page)
 
+    return spell
+    
 
 def main():
     data_path = './data/markdown_data'

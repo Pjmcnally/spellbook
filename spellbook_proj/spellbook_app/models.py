@@ -126,6 +126,9 @@ class Source(models.Model):
     link = models.URLField(max_length=255)
     public = models.BooleanField()
 
+    spells = models.ManyToManyField(
+        'spell', through='SpellSource')
+
     def __str__(self):
         return self.short_name
 
@@ -134,13 +137,9 @@ class Source(models.Model):
 
 
 class SpellSource(models.Model):
-    source = models.ForeignKey('Source', on_delete=models.CASCADE)
     spell = models.ForeignKey('Spell', on_delete=models.CASCADE)
+    source = models.ForeignKey('Source', on_delete=models.CASCADE)
     page = models.CharField(max_length=20)
-
-    def __str__(self):
-        return "{} found in {} on page {}".format(
-            self.source, self.spell, self.page)
 
     class Meta:
         ordering = ['source', 'spell']
@@ -191,10 +190,6 @@ class Spell(models.Model):
         'SubDomain',
         related_name='sub_domain',
         blank=True)
-    # source = models.ManyToManyField(
-    #     'Source',
-    #     through='SpellSource',
-    #     related_name='source')
 
     def __str__(self):
         return self.name
