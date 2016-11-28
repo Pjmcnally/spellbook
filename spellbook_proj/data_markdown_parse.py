@@ -1,10 +1,41 @@
 #!/usr/bin/env python
+
+"""A module to parse data and save it to a datase
+
+This module is designed to parse the files stored in data/markdown data.
+It parses these files to extract spell data from D&D 5th edition and then
+loads the data in to the database for this django project.
+
+The markdown files were originally downloaded from repo located at:
+https://github.com/thebombzen/grimoire.  However, they have been substatially
+modified as part of this project.
+
+Example:
+    $ python data_markdown_parse.py
+
+To Do:
+    This was built as a one off to parse the files and load the database.
+    There is much that could be done to improve it however, I feel it is
+    already obsolete.
+
+    If I return to it here is a list of items to consider/implement:
+        * Testing
+        * Implement class w/functions as methods
+        * remove variables from repetitively called functions
+        * Impletment error checking
+
+"""
+
+# Lines 4-7 import and establis a Django environment with all local settings
+# and variables so that this script can directly interact with models/database.
 import os
-import re
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spellbook_proj.settings")
 import django  # noqa
 django.setup()
 
+
+# Lines 12-17 are normal imports. "# noqa" disables the linter for that line.
+import re # noqa
 from spellbook_app.models import (  # noqa
     CastingTime, Class, Component, Duration, Domain, Level, Range, School,
     Source, SpellSource, Spell, SubDomain)
@@ -324,7 +355,7 @@ def create_spell(content):
             page=page)
 
     return spell
-    
+
 
 def main():
     data_path = './data/markdown_data'
