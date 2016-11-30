@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class CastingTime(models.Model):
@@ -24,6 +25,9 @@ class Class(models.Model):
 
     def __str__(self):
         return self.name.title()
+
+    def get_absolute_url(self):
+        return reverse('class_spell_list', kwargs={'slug': self.slug})
 
     class Meta:
         ordering = ['name']
@@ -200,3 +204,6 @@ class Spell(models.Model):
     def output_json(self):
         # check out https://docs.djangoproject.com/en/1.10/topics/files/
         pass
+
+    def get_absolute_url(self):
+        return reverse('spell_detail', kwargs={'spell': self.slug})
