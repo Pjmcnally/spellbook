@@ -17,8 +17,8 @@ def spell_list(request, slug=None):
     return render(request, 'spellbook_app/spell_list.html', context)
 
 
-def spell_detail(request, spell):
+def spell_detail(request, slug):
     classes = Class.objects.all()  # get all classes for navbar
-    spell = Spell.objects.get(slug=spell)
+    spell = Spell.objects.get(slug=slug)
     context = {'classes': classes, 'spell': spell}
     return render(request, 'spellbook_app/spell_detail.html', context)
