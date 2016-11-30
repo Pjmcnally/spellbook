@@ -1,1 +1,13 @@
-This is where the spell list will go
+{% extends parent_template|default:"spellbook_app/base.html" %}
+
+{% block content %}
+
+<h1 class="list-title">{{title_text}} Spells</h1>
+
+{% for spell in spells %}
+  <div class="container">
+  <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
+  </div>
+{% endfor %}
+
+{% endblock %}
