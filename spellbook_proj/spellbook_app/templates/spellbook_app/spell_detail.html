@@ -1,4 +1,11 @@
+{% extends parent_template|default:"spellbook_app/base.html" %}
+
+{% block content %}
+
+
 {{spell.name}}
 {{spell.level}}
 {{spell.school}}
 {{spell.text}}
+
+{% endblock %}
