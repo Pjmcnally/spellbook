@@ -17,7 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from spellbook_app import urls as spellbook_urls
 
+from .views import redirect_root
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^spellbook', include(spellbook_urls)),
+    url(r'^$', redirect_root),
+    url(r'^spellbook/', include(spellbook_urls)),
 ]
