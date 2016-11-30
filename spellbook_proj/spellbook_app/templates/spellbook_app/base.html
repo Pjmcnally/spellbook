@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+        Spellbook
+      {% endblock %}
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]><script
+      src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script><![endif]-->
+  </head>
+
+  <body>
+
+    <div><!-- container -->
+      <header>
+          <h1>Spellbook</h1>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              All</a></li>
+          {% for class in Classes %}
+            <li>
+              <a href={{class.get_absolute_url}}>
+                class.name</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+<!--       {% if messages %}
+        <div>
+          <div>
+            <ul>
+              {% for message in messages %}
+                {% if message.tags %}
+                  <li class="{{ message.tags }}">
+                {% else %}
+                  <li>
+                {% endif %}
+                {{ message }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %} -->
+      <main>
+        {% block content %}
+          This is default content!
+        {% endblock %}
+      </main>
+    </div><!-- container -->
+
+    <footer>
+      <p>
+        &copy; 2016
+        <a href="https://github.com/Pjmcnally">
+          Patrick McNally</a>
+      </p>
+    </footer>
+
+  </body>
+
+</html>
