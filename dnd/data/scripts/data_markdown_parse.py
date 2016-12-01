@@ -29,7 +29,10 @@ To Do:
 # Lines 4-7 import and establis a Django environment with all local settings
 # and variables so that this script can directly interact with models/database.
 import os
+import sys
+proj_path = "/home/pjmcnally/programming/spellbook/dnd/"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dnd.settings")
+sys.path.append(proj_path)
 import django  # noqa
 django.setup()
 
@@ -358,7 +361,7 @@ def create_spell(content):
 
 
 def main():
-    data_path = './data/markdown_data'
+    data_path = '../markdown_data'
     data_ext = ['.md']
 
     file_list = get_file_list(data_path, data_ext)
