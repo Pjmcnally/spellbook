@@ -29,14 +29,14 @@ To Do:
 # Lines 4-7 import and establis a Django environment with all local settings
 # and variables so that this script can directly interact with models/database.
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spellbook_proj.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dnd.settings")
 import django  # noqa
 django.setup()
 
 
 # Lines 12-17 are normal imports. "# noqa" disables the linter for that line.
 import re # noqa
-from spellbook_app.models import (  # noqa
+from spellbook.models import (  # noqa
     CastingTime, Class, Component, Duration, Domain, Level, Range, School,
     Source, SpellSource, Spell, SubDomain)
 from data_utils import get_file_list   # noqa

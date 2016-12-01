@@ -1,4 +1,4 @@
-"""spellbook_proj URL Configuration
+"""dnd URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from spellbook_app import urls as spellbook_urls
+from spellbook import urls as spellbook_urls
 
 from .views import redirect_root
 

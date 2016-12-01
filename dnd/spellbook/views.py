@@ -14,11 +14,11 @@ def spell_list(request, slug=None):
         spells = Spell.objects.all().filter(source__public=True)
 
     context = {'classes': classes, 'spells': spells, "title_text": title_text}
-    return render(request, 'spellbook_app/spell_list.html', context)
+    return render(request, 'spellbook/spell_list.html', context)
 
 
 def spell_detail(request, slug):
     classes = Class.objects.all()  # get all classes for navbar
     spell = Spell.objects.get(slug=slug)
     context = {'classes': classes, 'spell': spell}
-    return render(request, 'spellbook_app/spell_detail.html', context)
+    return render(request, 'spellbook/spell_detail.html', context)
