@@ -13,42 +13,32 @@
     <!--[if IE]><script
       src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
     </script><![endif]-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 
   <body>
-
-    <div><!-- container -->
-      <header>
-          <h1>Spellbook</h1>
-      </header>
-      <nav>
-        <ul>
-          <li>
-            <a href="">
-              All</a></li>
-          {% for class in Classes %}
-            <li>
-              <a href={{class.get_absolute_url}}>
-                class.name</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-<!--       {% if messages %}
-        <div>
-          <div>
-            <ul>
-              {% for message in messages %}
-                {% if message.tags %}
-                  <li class="{{ message.tags }}">
-                {% else %}
-                  <li>
-                {% endif %}
-                {{ message }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Spellbook</a>
         </div>
-      {% endif %} -->
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">All</a></li>
+            {% for class in classes %}
+              <li><a href={{class.get_absolute_url}}>{{class.name|title}}</a></li>
+            {% endfor %}
+          </ul>
+    </nav>
+
       <main>
         {% block content %}
           This is default content!
