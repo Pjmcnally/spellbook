@@ -36,7 +36,7 @@ def spell_list(request, slug=None):
         'spells_6': spells_6,
         'spells_7': spells_7,
         'spells_8': spells_8,
-        'spells_9': spells_9,}
+        'spells_9': spells_9}
     return render(request, 'spellbook/spell_list.html', context)
 
 
