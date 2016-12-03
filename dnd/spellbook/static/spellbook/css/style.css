@@ -1,5 +1,6 @@
 .spell_container {
     font-family: 'Lora', serif;
+    font-size: 18px;
 }
 
 .spell_name {
@@ -12,3 +13,26 @@
     font-size: 1.25em;
     font-style: italic;
 }
+
+.spell_text table {
+    border: 1px solid #771900;
+    border-collapse: collapse;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    text-align: center;
+    width: 100%;
+
+}
+
+.spell_text th {
+    background-color: #771900;
+    color: white;
+    text-align: center;
+}
+
+.spell_text thead {
+    border-color: inherit;
+    display: table-header-group;
+    vertical-align: middle;
+}
+
