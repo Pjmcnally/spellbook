@@ -1,5 +1,9 @@
 /*csslint order-alphabetical: false, box-sizing: false*/
 
+body {
+  padding-top: 50px;
+}
+
 .spell_container {
     font-family: 'Lora', serif;
     font-size: 18px;
