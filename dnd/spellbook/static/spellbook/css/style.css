@@ -12,17 +12,24 @@ body {
 .spell_name {
     font-family: 'Mate SC', serif;
     font-size: 3em;
-    margin-bottom: 0;
+    margin-bottom: -5px;
 }
 
 .spell_school_level {
     font-size: 1.25em;
     font-style: italic;
 }
+.spell_detail p {
+    margin-bottom: 2px;
+}
+
+.spell_head, .spell_detail {
+    margin-bottom: 20px;
+}
 
 .spell_text table {
     background-color: transparent;
-    border: 1px solid #771900;
+    border: 1px solid #0A4958;
     border-collapse: collapse;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -32,12 +39,22 @@ body {
     width: 100%;
 }
 
+.spell_text thead {
+    border-color: inherit;
+    display: table-header-group;
+    vertical-align: middle;
+}
+
 .spell_text th {
-    background-color: #771900;
+    background-color: #0A4958;
     color: white;
     font-weight: bold;
     padding: 8px;
     text-align: center;
+}
+
+.spell_text tbody tr:nth-child(even) {
+   background-color: #ccc;
 }
 
 .spell_text td {
@@ -45,9 +62,4 @@ body {
     text-align: center;
 }
 
-.spell_text thead {
-    border-color: inherit;
-    display: table-header-group;
-    vertical-align: middle;
-}
 
