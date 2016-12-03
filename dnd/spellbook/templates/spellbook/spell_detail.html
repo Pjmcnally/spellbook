@@ -1,5 +1,6 @@
 {% extends parent_template|default:"spellbook/spellbook_base.html" %}
 {% load staticfiles %}
+{% load spellbook_tags %}
 
 {% block title %}
   {{ spell.name }}
@@ -31,7 +32,7 @@
       <p><strong>Duration: </strong> {% if spell.concentration %} Concentration, {{ spell.duration }} {% else %} {{ spell.duration|capfirst }}{% endif %}</p>
     </div>
     <div class="spell_text">
-      {{spell.text}}
+      {{spell.text|markdownify|safe}}
     </div>
 
   </div>

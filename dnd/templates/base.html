@@ -10,16 +10,12 @@
     <meta name="description" content="A site to display D&D spells">
     <meta name="author" content="Patrick McNally">
     <link rel="icon" href="{% static 'site/favicon.ico' %}">
-
-    <title>
-      {% block title %}
-      {% endblock %}
-    </title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'site/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Style for spacing with fixed navbar -->
-    <link href="{% static 'site/css/navbar-fixed-top.css' %}" rel="stylesheet">
+    <link href="{% static 'site/css/style.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

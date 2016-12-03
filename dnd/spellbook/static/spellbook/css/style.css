@@ -1,5 +1,8 @@
+/*csslint order-alphabetical: false, box-sizing: false*/
+
 .spell_container {
     font-family: 'Lora', serif;
+    font-size: 18px;
 }
 
 .spell_name {
@@ -12,3 +15,36 @@
     font-size: 1.25em;
     font-style: italic;
 }
+
+.spell_text table {
+    background-color: transparent;
+    border: 1px solid #771900;
+    border-spacing: 0;
+    border-collapse: collapse;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.spell_text th {
+    background-color: #771900;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+}
+
+.spell_text td {
+    padding: 8px;
+    text-align: center;
+}
+
+.spell_text thead {
+    border-color: inherit;
+    display: table-header-group;
+    vertical-align: middle;
+}
+
