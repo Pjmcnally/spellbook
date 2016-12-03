@@ -36,16 +36,17 @@ class Class(models.Model):
 class Component(models.Model):
     full_name = models.CharField(max_length=20, unique=True)
     short_name = models.CharField(max_length=1, unique=True)
+    count = models.SmallIntegerField(unique=True)  # A field to aid in arbitrary sorting
     slug = models.SlugField(
         max_length=1,
         unique=True,
         help_text='A lable for URL config',)
 
     def __str__(self):
-        return self.full_name
+        return self.short_name
 
     class Meta:
-        ordering = ['full_name']
+        ordering = ['count']
 
 
 class Domain(models.Model):

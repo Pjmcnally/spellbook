@@ -51,7 +51,7 @@ def get_or_create_casting_time(string):
     cast_time_pat = re.compile(
         '^\*\*Casting Time\*\*:\s+'
         '(?P<cast_time>[\d\w\s]+)[,\s]*'
-        '(?P<react_text>[\d\w\s,\.]+)*$')
+        '(?P<react_text>[\d\w\s,]+)*\.*$')
 
     match = re.search(cast_time_pat, string)
 
@@ -215,19 +215,22 @@ def get_or_create_components(string):
         v_obj, created = Component.objects.get_or_create(
             full_name="verbal",
             short_name="V",
-            slug="v")
+            slug="v",
+            count=0)
         comp_objs.append(v_obj)
     if "S" in comp_string:
         s_obj, created = Component.objects.get_or_create(
             full_name="somatic",
             short_name="S",
-            slug="s")
+            slug="s",
+            count=1)
         comp_objs.append(s_obj)
     if "M" in comp_string:
         m_obj, created = Component.objects.get_or_create(
             full_name="material",
             short_name="M",
-            slug="m")
+            slug="m",
+            count=2)
         comp_objs.append(m_obj)
 
     return comp_objs, comp_text
