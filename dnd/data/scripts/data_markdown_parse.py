@@ -51,7 +51,7 @@ def get_or_create_casting_time(string):
     cast_time_pat = re.compile(
         '^\*\*Casting Time\*\*:\s+'
         '(?P<cast_time>[\d\w\s]+)[,\s]*'
-        '(?P<react_text>[\d\w\s,\.]+)*$')
+        '(?P<react_text>[\d\w\s,]+)*\.*$')
 
     match = re.search(cast_time_pat, string)
 
