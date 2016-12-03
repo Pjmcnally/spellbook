@@ -19,7 +19,6 @@
 .spell_text table {
     background-color: transparent;
     border: 1px solid #771900;
-    border-spacing: 0;
     border-collapse: collapse;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
