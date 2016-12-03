@@ -7,7 +7,7 @@ def spell_list(request, slug=None):
     classes = Class.objects.all()  # get all classes for navbar
     if slug:
         title_text = Class.objects.get(slug__iexact=slug).name.title()
-        spells = Spell.objects.filter(_class__slug=slug)  # \
+        spells = Spell.objects.filter(clss__slug=slug)  # \
                               # .filter(source__public=True)
     else:
         title_text = "All"
@@ -36,7 +36,7 @@ def spell_list(request, slug=None):
         'spells_6': spells_6,
         'spells_7': spells_7,
         'spells_8': spells_8,
-        'spells_9': spells_9,}
+        'spells_9': spells_9}
     return render(request, 'spellbook/spell_list.html', context)
 
 
