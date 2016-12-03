@@ -1,11 +1,41 @@
 {% extends parent_template|default:"spellbook/spellbook_base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+  {{ spell.name }}
+{% endblock %}
+
+{% block links %}
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+  <link href="{% static 'spellbook/css/style.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Mate+SC" rel="stylesheet">
+{% endblock %}
+
 
 {% block content %}
+  <div class="container spell_container"> 
+    <div class="spell_head">
+      <h1 class="spell_name">{{spell.name}}</h1>
+      <p class="spell_school_level">
+        {% if spell.level.num == 0 %}
+          {{spell.school}} {{spell.level}}
+        {% else %}
+          {{spell.level}} {{spell.school}}
+        {% endif %}
+      </p>
+    </div>
+    <div class="spell_detail">
+      <p><strong>Casting Time: </strong> {{ spell.casting_time }}</p>
+      <p><strong>Range: </strong> {{ spell.rng }} {{ spell.range_text }}
+    </div>
+    <div class="spell_text">
+      {{spell.text}}
+    </div>
+
+  </div>
 
 
-{{spell.name}}
-{{spell.level}}
-{{spell.school}}
-{{spell.text}}
+
+
 
 {% endblock %}

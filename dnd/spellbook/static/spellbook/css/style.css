@@ -1,0 +1,14 @@
+.spell_container {
+    font-family: 'Lora', serif;
+}
+
+.spell_name {
+    font-family: 'Mate SC', serif;
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.spell_school_level {
+    font-size: 1.25em;
+    font-style: italic;
+}

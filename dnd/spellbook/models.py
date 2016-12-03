@@ -181,10 +181,10 @@ class Spell(models.Model):
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)
     level = models.ForeignKey('Level', on_delete=models.CASCADE)
-    _range = models.ForeignKey('Range', on_delete=models.CASCADE)
+    rng = models.ForeignKey('Range', on_delete=models.CASCADE)
     school = models.ForeignKey('School', on_delete=models.CASCADE)
 
-    _class = models.ManyToManyField(
+    clss = models.ManyToManyField(
         'Class',
         related_name="_class")
     component = models.ManyToManyField(

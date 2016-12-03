@@ -47,13 +47,14 @@ from django.utils.text import slugify  # noqa
 
 
 def get_or_create_casting_time(string):
+    print(string)
     cast_time_pat = re.compile(
-        '\*\*Casting Time\*\*:\s+'
-        '(?P<cast_time>[\d\w\s]+)'
-        '[,\s]*'
-        '(?P<react_text>[\d\w\s,]*)')
+        '^\*\*Casting Time\*\*:\s+'
+        '(?P<cast_time>[\d\w\s]+)[,\s]*'
+        '(?P<react_text>[\d\w\s,\.]+)*$')
 
     match = re.search(cast_time_pat, string)
+
     cast_time = match.group("cast_time")
     react_text = match.group("react_text")
 
@@ -67,20 +68,19 @@ def get_or_create_casting_time(string):
 def get_or_create_range(string):
     range_pat = re.compile(
         '^\*\*Range\*\*:\s+'
-        '(?P<_range>[\d\w\s]+)'
-        '[\s]*'
+        '(?P<rng>[\d\w\s]+)[\s]*'
         '(?P<range_text>[()\d\w\s\-]+)*$')
 
     match = re.search(range_pat, string)
-    _range = match.group("_range").strip()
+    rng = match.group("rng").strip()
     range_text = match.group("range_text")
 
     if range_text:
         range_text = range_text.replace("(", "").replace(")", "")
 
     obj, created = Range.objects.get_or_create(
-        text=_range,
-        slug=slugify(_range))
+        text=rng,
+        slug=slugify(rng))
 
     return obj, range_text
 
@@ -88,9 +88,7 @@ def get_or_create_range(string):
 def parse_tags(string):
     tags_pat = re.compile(
         '^tags:[\s]+'
-        '\['
-        '(?P<tags>[\w\s\d,()]+)'
-        '\]$')
+        '\[(?P<tags>[\w\s\d,()]+)\]$')
 
     match = re.search(tags_pat, string)
 
@@ -117,8 +115,7 @@ def get_or_create_classes(tags):
 def get_or_create_domains(tags):
     domain_pat = re.compile(
         '(?P<domain>[\w\s]+)'
-        '\('
-        '(?P<sub_domain>[\w\s]+)')
+        '\((?P<sub_domain>[\w\s]+)\)')
 
     sub_domains = []
 
@@ -187,10 +184,8 @@ def open_file(path):
 
 def get_or_create_duration(string):
     duration_pat = re.compile(
-        '\*\*Duration\*\*:'
-        '\s+'
-        '(?P<concentration>Concentration,)*'
-        '\s*'
+        '^\*\*Duration\*\*:\s+'
+        '(?P<concentration>Concentration,)*\s*'
         '(?P<duration>[\w\s]+)')
 
     match = re.search(duration_pat, string)
@@ -208,11 +203,9 @@ def get_or_create_duration(string):
 def get_or_create_components(string):
     comp_objs = []
     comp_pat = re.compile(
-        '\*\*Components\*\*\:\s+'
+        '^\*\*Components\*\*\:\s+'
         '(?P<components>[\s\w,]+)'
-        '\(*'
-        '(?P<comp_text>[^\)]*)'
-        '\)*')
+        '\(*(?P<comp_text>[^\)]+)*\)*$')
 
     match = re.search(comp_pat, string)
     comp_string = match.group('components')
@@ -312,15 +305,18 @@ def get_or_create_sources(string):
 
 
 def create_spell(content):
+    name = get_name(content[2])
+    print(name)
+
     tags = parse_tags(content[5])
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
 
-    name = get_name(content[2])
     level = get_or_create_level(content[8])
     school = get_or_create_school(content[8])
     cast_time, react_text = get_or_create_casting_time(content[10])
-    _range, range_text = get_or_create_range(content[12])
+    print("cast time done")
+    rng, range_text = get_or_create_range(content[12])
 
     duration, concentration = get_or_create_duration(content[16])
     components, component_text = get_or_create_components(content[14])
@@ -338,12 +334,12 @@ def create_spell(content):
         casting_time=cast_time,
         duration=duration,
         level=level,
-        _range=_range,
+        rng=rng,
         school=school,
     )
 
     for item in classes:
-        spell._class.add(item)
+        spell.clss.add(item)
 
     for item in components:
         spell.component.add(item)
@@ -368,7 +364,7 @@ def main():
     for file_path in file_list:
         content = open_file(file_path)
         spell = create_spell(content)
-        print(spell)
+        # print(spell)
 
 
 if __name__ == '__main__':
