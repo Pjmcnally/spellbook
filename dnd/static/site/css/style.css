@@ -1,0 +1,32 @@
+/*csslint order-alphabetical: false, box-sizing: false*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 50px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #ccc;
+}
+
+.footer .container {
+    display: table;
+    height: 100%;
+}
+
+.table-center {
+    display: table-cell;
+    vertical-align: middle;
+}
