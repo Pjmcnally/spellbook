@@ -62,4 +62,8 @@ body {
     text-align: center;
 }
 
+.spell-block ul {
+    list-style-type: none;
+}
+
 
