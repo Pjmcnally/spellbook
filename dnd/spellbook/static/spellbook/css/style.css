@@ -27,30 +27,30 @@ body {
     background-color: lightgrey;
 }
 
-.spell_container {
+.spell-container {
     font-family: 'Lora', serif;
     font-size: 18px;
 }
 
-.spell_name {
+.spell-name {
     font-family: 'Mate SC', serif;
     font-size: 3em;
     margin-bottom: -5px;
 }
 
-.spell_school_level {
+.spell-school-level {
     font-size: 1.25em;
     font-style: italic;
 }
-.spell_detail p {
+.spell-detail p {
     margin-bottom: 2px;
 }
 
-.spell_head, .spell_detail {
+.spell-head, .spell-detail {
     margin-bottom: 20px;
 }
 
-.spell_text table {
+.spell-text table {
     background-color: transparent;
     border: 1px solid #0A4958;
     border-collapse: collapse;
@@ -62,13 +62,13 @@ body {
     width: 100%;
 }
 
-.spell_text thead {
+.spell-text thead {
     border-color: inherit;
     display: table-header-group;
     vertical-align: middle;
 }
 
-.spell_text th {
+.spell-text th {
     background-color: #0A4958;
     color: white;
     font-weight: bold;
@@ -76,11 +76,11 @@ body {
     text-align: center;
 }
 
-.spell_text tbody tr:nth-child(even) {
+.spell-text tbody tr:nth-child(even) {
    background-color: #ccc;
 }
 
-.spell_text td {
+.spell-text td {
     padding: 8px;
     text-align: center;
 }
