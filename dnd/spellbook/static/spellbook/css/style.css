@@ -4,10 +4,21 @@ body {
   padding-top: 100px;
 }
 
+.navbar-collapse {
+  text-align:center;
+}
+
+.navbar-nav {
+    display:inline-block;
+    float:none;
+}
+
 .internal-navbar {
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ccc;
+    margin-top: 50px; 
+}
+
+.internal-navbar .container {
+    background-color: lightgrey;
 }
 
 .spell_container {
