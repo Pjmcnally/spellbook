@@ -7,11 +7,11 @@ def spell_list(request, slug=None):
     classes = Class.objects.all()  # get all classes for navbar
     if slug:
         title_text = Class.objects.get(slug__iexact=slug).name.title()
-        spells = Spell.objects.filter(clss__slug=slug)  # \
-                              # .filter(source__public=True)
+        spells = Spell.objects.filter(clss__slug=slug)  \
+                              .filter(source__public=True)
     else:
         title_text = "All"
-        spells = Spell.objects.all()  # .filter(source__public=True)
+        spells = Spell.objects.filter(source__public=True)
 
     cantrips = spells.filter(level__num=0)
     spells_1 = spells.filter(level__num=1)
