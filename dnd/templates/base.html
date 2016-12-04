@@ -24,28 +24,22 @@
       <link href="{% static 'site/css/bootstrap.min.css' %}" rel="stylesheet">
       <!-- Normalize CSS to standardize presentation across browsers -->
       <link href="{% static 'site/css/normalize.css' %}" rel="stylesheet">
+      <!-- base site css -->
+      <link href="{% static 'site/css/style.css' %}" rel="stylesheet">
     {% endblock %}
   </head>
 
   <body>
     {% block navbar %}
     {% endblock %}
+    
     <div class="container">
-      <main>
-        {% block content %}
-          This is default content!
-        {% endblock %}
-      </main>
-    </div><!-- container -->
+      {% block content %}
+        This is default content!
+      {% endblock %}
+    </div>
 
     {% block footer %}
-      <footer>
-        <p>
-          &copy; 2016
-          <a href="https://github.com/Pjmcnally">
-            Patrick McNally</a>
-        </p>
-      </footer>
     {% endblock %}
 
     {% block scripts %}
