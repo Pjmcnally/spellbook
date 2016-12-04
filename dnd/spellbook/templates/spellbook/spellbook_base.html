@@ -13,7 +13,7 @@
 {% block links %}
   {{ block.super }}
   <link rel="icon" href="{% static 'site/favicon.ico' %}">
-  <!-- Style for spacing with fixed navbar -->
+  <!-- spellbook style sheet -->
   <link href="{% static 'spellbook/css/style.css' %}" rel="stylesheet">
 {% endblock %}
 
@@ -41,15 +41,8 @@
 {% endblock %}  
 
 {% block footer %}
-  <footer class="footer">
-    <div class="container col-xs-12">
-      <div class="table-center">
-        &copy; 2016 <a href="https://github.com/Pjmcnally">Patrick McNally</a>.  
-        All spell data created by Wizards of the Coast used under the 
-        <a href="http://www.opengamingfoundation.org/ogl.html">OGL</a>.
-      </div>
-    </div>
-  </footer>
+  {{ block.super }} All spell data created by Wizards of the Coast used under 
+  the <a href="http://www.opengamingfoundation.org/ogl.html">OGL</a>.
 {% endblock %}
 
 {% block scripts %}
