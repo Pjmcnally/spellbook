@@ -19,7 +19,8 @@ body {
 }
 
 .internal-navbar {
-    margin-top: 50px; 
+    margin-top: 50px;
+    border-width: 0; 
 }
 
 .internal-navbar .container {
