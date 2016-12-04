@@ -1,7 +1,13 @@
 /*csslint order-alphabetical: false, box-sizing: false*/
 
 body {
-  padding-top: 50px;
+  padding-top: 100px;
+}
+
+.internal-navbar {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ccc;
 }
 
 .spell_container {
