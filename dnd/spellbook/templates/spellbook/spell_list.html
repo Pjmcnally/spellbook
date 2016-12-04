@@ -1,24 +1,41 @@
 {% extends parent_template|default:"spellbook/spellbook_base.html" %}
 
+{% block internal_nav %}
+  <!-- Second filxed navbar -->
+    <nav class="navbar internal-navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" id="nav-toggle-internal" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Spell Levels: </a>
+        </div>
+        <div id="navbar2" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav level-links in-nav-text">
+            {% if cantrips %}<li><a href="#cantrip">Cantrips</a></li>{% endif %}
+            {% if spells_1 %}<li><a href="#level-1">1</a></li>{% endif %}
+            {% if spells_2 %}<li><a href="#level-2">2</a></li>{% endif %}
+            {% if spells_3 %}<li><a href="#level-3">3</a></li>{% endif %}
+            {% if spells_4 %}<li><a href="#level-4">4</a></li>{% endif %}
+            {% if spells_5 %}<li><a href="#level-5">5</a></li>{% endif %}
+            {% if spells_6 %}<li><a href="#level-6">6</a></li>{% endif %}
+            {% if spells_7 %}<li><a href="#level-7">7</a></li>{% endif %}
+            {% if spells_8 %}<li><a href="#level-8">8</a></li>{% endif %}
+            {% if spells_9 %}<li><a href="#level-9">9</a></li>{% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endblock %}
+
 {% block content %}
   <div class="container col-md-10 col-md-offset-1">
-    <ul class="level_links">
-      <li><a href="#top">Top</a></li>
-      {% if cantrips %}<li><a href="#cantrip">Cantrips</a></li>{% endif %}
-      {% if spells_1 %}<li><a href="#level-1">Level 1</a></li>{% endif %}
-      {% if spells_2 %}<li><a href="#level-2">Level 2</a></li>{% endif %}
-      {% if spells_3 %}<li><a href="#level-3">Level 3</a></li>{% endif %}
-      {% if spells_4 %}<li><a href="#level-4">Level 4</a></li>{% endif %}
-      {% if spells_5 %}<li><a href="#level-5">Level 5</a></li>{% endif %}
-      {% if spells_6 %}<li><a href="#level-6">Level 6</a></li>{% endif %}
-      {% if spells_7 %}<li><a href="#level-7">Level 7</a></li>{% endif %}
-      {% if spells_8 %}<li><a href="#level-8">Level 8</a></li>{% endif %}
-      {% if spells_9 %}<li><a href="#level-9">Level 9</a></li>{% endif %}
-    </ul>
-    <div id="top"></div>
     {% if cantrips %}
       <div class="spell-block">
-        <h2 id="cantrip">Cantrips</h2>
+        <h2 id="cantrip" class="fixed-anchor">Cantrips</h2>
         <ul>
         {% for spell in cantrips %}
           <li class="spell">
@@ -29,7 +46,7 @@
     {% endif %}
     {% if spells_1 %}
       <div class="spell-block">
-        <h2 id="level-1">Level 1</h2>
+        <h2 id="level-1" class="fixed-anchor">Level 1</h2>
         <ul>
         {% for spell in spells_1 %}
           <li class=spell>
@@ -41,7 +58,7 @@
     {% endif %}
     {% if spells_2 %}
       <div class="spell-block">
-        <h2 id="level-2">Level 2</h2>
+        <h2 id="level-2" class="fixed-anchor">Level 2</h2>
         <ul>
         {% for spell in spells_2 %}
           <li class=spell>
@@ -53,7 +70,7 @@
     {% endif %}
     {% if spells_3 %}
       <div class="spell-block">
-        <h2 id="level-3">Level 3</h2>
+        <h2 id="level-3" class="fixed-anchor">Level 3</h2>
         <ul>
         {% for spell in spells_3 %}
           <li class="spell">
@@ -64,7 +81,7 @@
     {% endif %}
     {% if spells_4 %}
       <div class="spell-block">
-        <h2 id="level-4">Level 4</h2>
+        <h2 id="level-4" class="fixed-anchor">Level 4</h2>
         <ul>
         {% for spell in spells_4 %}
           <li class="spell">
@@ -75,7 +92,7 @@
     {% endif %}
     {% if spells_5 %}
       <div class="spell-block">
-        <h2 id="level-5">Level 5</h2>
+        <h2 id="level-5" class="fixed-anchor">Level 5</h2>
         <ul>
         {% for spell in spells_5 %}
           <li class="spell">
@@ -86,7 +103,7 @@
     {% endif %}
     {% if spells_6 %}
       <div class="spell-block">
-        <h2 id="level-6">Level 6</h2>
+        <h2 id="level-6" class="fixed-anchor">Level 6</h2>
         <ul>
         {% for spell in spells_6 %}
           <li class="spell">
@@ -97,7 +114,7 @@
     {% endif %}
     {% if spells_7 %}
       <div class="spell-block">
-        <h2 id="level-7">Level 7</h2>
+        <h2 id="level-7" class="fixed-anchor">Level 7</h2>
         <ul>
         {% for spell in spells_7 %}
           <li class="spell">
@@ -108,7 +125,7 @@
     {% endif %}
     {% if spells_8 %}
       <div class="spell-block">
-        <h2 id="level-8">Level 8</h2>
+        <h2 id="level-8" class="fixed-anchor">Level 8</h2>
         <ul>
         {% for spell in spells_8 %}
           <li class="spell">
@@ -119,7 +136,7 @@
     {% endif %}
     {% if spells_9 %}
       <div class="spell-block">
-        <h2 id="level-9">Level 9</h2>
+        <h2 id="level-9" class="fixed-anchor">Level 9</h2>
         <ul>
         {% for spell in spells_9 %}
           <li class="spell">
