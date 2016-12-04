@@ -47,7 +47,6 @@ from django.utils.text import slugify  # noqa
 
 
 def get_or_create_casting_time(string):
-    print(string)
     cast_time_pat = re.compile(
         '^\*\*Casting Time\*\*:\s+'
         '(?P<cast_time>[\d\w\s]+)[,\s]*'
@@ -318,7 +317,6 @@ def create_spell(content):
     level = get_or_create_level(content[8])
     school = get_or_create_school(content[8])
     cast_time, react_text = get_or_create_casting_time(content[10])
-    print("cast time done")
     rng, range_text = get_or_create_range(content[12])
 
     duration, concentration = get_or_create_duration(content[16])
