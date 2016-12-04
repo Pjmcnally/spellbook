@@ -176,7 +176,7 @@ class Spell(models.Model):
     ritual = models.BooleanField()
 
     cast_time_text = models.CharField(max_length=100, null=True)
-    component_text = models.CharField(max_length=100, null=True)
+    component_text = models.TextField(null=True)
     range_text = models.CharField(max_length=100, null=True)
 
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
