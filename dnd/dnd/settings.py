@@ -27,7 +27,8 @@ SECRET_KEY = local_settings.SECRET_KEY
 DEBUG = False
 
 ALLOWED_HOSTS = [
-	'pjmcnally.pythonanywhere.com'
+    'pjmcnally.pythonanywhere.com',
+    '127.0.0.1'
 ]
 
 
