@@ -33,22 +33,22 @@
 
 {% block content %}
   <div class="container col-md-10 col-md-offset-1">
-    {% if cantrips %}
+    {% if spells.0 %}
       <div class="spell-block">
         <h2 id="cantrip" class="fixed-anchor">Cantrips</h2>
         <ul>
-        {% for spell in cantrips %}
+        {% for spell in spells.0 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_1 %}
+    {% if spells.1 %}
       <div class="spell-block">
         <h2 id="level-1" class="fixed-anchor">Level 1</h2>
         <ul>
-        {% for spell in spells_1 %}
+        {% for spell in spells.1 %}
           <li class=spell>
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
@@ -56,11 +56,11 @@
         </ul>
       </div>
     {% endif %}
-    {% if spells_2 %}
+    {% if spells.2 %}
       <div class="spell-block">
         <h2 id="level-2" class="fixed-anchor">Level 2</h2>
         <ul>
-        {% for spell in spells_2 %}
+        {% for spell in spells.2 %}
           <li class=spell>
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
@@ -68,77 +68,77 @@
         </ul>
       </div>
     {% endif %}
-    {% if spells_3 %}
+    {% if spells.3 %}
       <div class="spell-block">
         <h2 id="level-3" class="fixed-anchor">Level 3</h2>
         <ul>
-        {% for spell in spells_3 %}
+        {% for spell in spells.3 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_4 %}
+    {% if spells.4 %}
       <div class="spell-block">
         <h2 id="level-4" class="fixed-anchor">Level 4</h2>
         <ul>
-        {% for spell in spells_4 %}
+        {% for spell in spells.4 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_5 %}
+    {% if spells.5 %}
       <div class="spell-block">
         <h2 id="level-5" class="fixed-anchor">Level 5</h2>
         <ul>
-        {% for spell in spells_5 %}
+        {% for spell in spells.5 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_6 %}
+    {% if spells.6 %}
       <div class="spell-block">
         <h2 id="level-6" class="fixed-anchor">Level 6</h2>
         <ul>
-        {% for spell in spells_6 %}
+        {% for spell in spells.6 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_7 %}
+    {% if spells.7 %}
       <div class="spell-block">
         <h2 id="level-7" class="fixed-anchor">Level 7</h2>
         <ul>
-        {% for spell in spells_7 %}
+        {% for spell in spells.7 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_8 %}
+    {% if spells.8 %}
       <div class="spell-block">
         <h2 id="level-8" class="fixed-anchor">Level 8</h2>
         <ul>
-        {% for spell in spells_8 %}
+        {% for spell in spells.8 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
         {% endfor %}
       </div>
     {% endif %}
-    {% if spells_9 %}
+    {% if spells.9 %}
       <div class="spell-block">
         <h2 id="level-9" class="fixed-anchor">Level 9</h2>
         <ul>
-        {% for spell in spells_9 %}
+        {% for spell in spells.9 %}
           <li class="spell">
             <a href={{spell.get_absolute_url}}>{{spell.name}}</a> {{spell.level}}
           </li>
