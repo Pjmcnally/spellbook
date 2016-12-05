@@ -7,9 +7,9 @@ def spell_list(request, slug=None):
     classes = Clss.objects.all()  # get all classes for navbar
     if slug:
         class_obj = Clss.objects.get(slug__iexact=slug)
-        spells = class_obj.spells.all()  # .filter(source__public=True)
+        spells = class_obj.spells.filter(source__public=True)
     else:
-        spells = Spell.objects.all()  #.filter(source__public=True)
+        spells = Spell.objects.filter(source__public=True)
 
     spell_dict = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [],
                   8: [], 9: []}
