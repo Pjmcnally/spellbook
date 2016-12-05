@@ -187,13 +187,13 @@ class Spell(models.Model):
 
     clss = models.ManyToManyField(
         'Class',
-        related_name="_class")
+        related_name="spells")
     component = models.ManyToManyField(
         'Component',
-        related_name='component')
+        related_name='spells')
     sub_domain = models.ManyToManyField(
         'SubDomain',
-        related_name='sub_domain',
+        related_name='spells',
         blank=True)
 
     def __str__(self):
