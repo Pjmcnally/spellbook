@@ -89,7 +89,7 @@ ENV/
 .ropeproject
 
 # Database
-.sqlite3
+db.sqlite3
 
 # OS files
 .DS_Store
