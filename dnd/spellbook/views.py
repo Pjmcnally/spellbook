@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
-from .models import Class, Spell
+from .models import Clss, Spell
 
 
 def spell_list(request, slug=None):
-    classes = Class.objects.all()  # get all classes for navbar
+    classes = Clss.objects.all()  # get all classes for navbar
     if slug:
-        title_text = Class.objects.get(slug__iexact=slug).name.title()
+        title_text = Clss.objects.get(slug__iexact=slug).name.title()
         spells = Spell.objects.filter(clss__slug=slug)  \
                               .filter(source__public=True)
     else:
@@ -41,7 +41,7 @@ def spell_list(request, slug=None):
 
 
 def spell_detail(request, slug):
-    classes = Class.objects.all()  # get all classes for navbar
+    classes = Clss.objects.all()  # get all classes for navbar
     spell = Spell.objects.get(slug=slug)
     context = {'classes': classes, 'spell': spell}
     return render(request, 'spellbook/spell_detail.html', context)

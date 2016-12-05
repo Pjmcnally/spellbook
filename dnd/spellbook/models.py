@@ -16,7 +16,7 @@ class CastingTime(models.Model):
         ordering = ['text']
 
 
-class Class(models.Model):
+class Clss(models.Model):
     name = models.CharField(max_length=20, unique=True)
     slug = models.SlugField(
         max_length=20,
@@ -36,7 +36,7 @@ class Class(models.Model):
 class Component(models.Model):
     full_name = models.CharField(max_length=20, unique=True)
     short_name = models.CharField(max_length=1, unique=True)
-    count = models.SmallIntegerField(unique=True)  # A field to aid in arbitrary sorting
+    sort_val = models.SmallIntegerField(unique=True)  # A field to aid in arbitrary sorting
     slug = models.SlugField(
         max_length=1,
         unique=True,
@@ -46,7 +46,7 @@ class Component(models.Model):
         return self.short_name
 
     class Meta:
-        ordering = ['count']
+        ordering = ['sort_val']
 
 
 class Domain(models.Model):
@@ -186,7 +186,7 @@ class Spell(models.Model):
     school = models.ForeignKey('School', on_delete=models.CASCADE)
 
     clss = models.ManyToManyField(
-        'Class',
+        'Clss',
         related_name="spells")
     component = models.ManyToManyField(
         'Component',
