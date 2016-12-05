@@ -4,6 +4,7 @@ from .models import Clss, Spell
 
 
 def spell_list(request, slug=None):
+    """ function to render spell list page """
     classes = Clss.objects.all()  # get all classes for navbar
     if slug:
         class_obj = Clss.objects.get(slug__iexact=slug)
