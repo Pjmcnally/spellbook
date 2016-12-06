@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Blur"
-date:   2015-01-07
-source: PHB.219, BASIC.85
+title: "Blur"
+date: 2015-01-07
+source: PHB.219
 tags: [druid (desert), sorcerer, wizard, level2, illusion]
 ---
 

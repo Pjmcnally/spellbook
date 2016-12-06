@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Revivify"
-date:   2015-01-02
-source: PHB.272, BASIC.100
+title: "Revivify"
+date: 2015-01-02
+source: PHB.272
 tags: [cleric, cleric (life), paladin, level3, necromancy]
 ---
 

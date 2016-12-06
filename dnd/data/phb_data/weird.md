@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Weird"
-date:   2015-01-10
+title: "Weird"
+date: 2015-01-10
 source: PHB.288
-tags:   [wizard, level9, illusion]
+tags: [wizard, level9, illusion]
 ---
 
 **9th-level illusion**

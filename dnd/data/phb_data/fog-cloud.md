@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Fog Cloud"
-date:   2014-08-24
+title: "Fog Cloud"
+date: 2014-08-24
 source: PHB.243
 tags: [cleric (tempest), druid, ranger, sorcerer, wizard, level1, conjuration]
 ---

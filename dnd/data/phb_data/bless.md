@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Bless"
-date:   2014-08-24
-source: PHB.219, BASIC.85
+title: "Bless"
+date: 2014-08-24
+source: PHB.219
 tags: [cleric, cleric (life), paladin, level1, enchantment]
 ---
 

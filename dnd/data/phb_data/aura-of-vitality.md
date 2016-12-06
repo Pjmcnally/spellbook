@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Aura Of Vitality"
-date:   2015-01-01
+title: "Aura Of Vitality"
+date: 2015-01-01
 source: PHB.216
 tags: [paladin, paladin (crown), level3, evocation]
 ---

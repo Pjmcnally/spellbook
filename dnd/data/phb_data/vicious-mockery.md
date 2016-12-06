@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Vicious Mockery"
-date:   2014-08-24
+title: "Vicious Mockery"
+date: 2014-08-24
 source: PHB.285
 tags: [bard, cantrip, enchantment]
 ---

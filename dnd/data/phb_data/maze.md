@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Maze"
-date:   2015-01-10
-source: PHB.258, BASIC.97
-tags:   [wizard, level8, conjuration]
+title: "Maze"
+date: 2015-01-10
+source: PHB.258
+tags: [wizard, level8, conjuration]
 ---
 
 **8th-level conjuration**

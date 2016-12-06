@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Glibness"
-date:   2015-01-10
+title: "Glibness"
+date: 2015-01-10
 source: PHB.245
-tags:   [bard, warlock, level8, transmutation]
+tags: [bard, warlock, level8, transmutation]
 ---
 
 **8th-level transmutation**

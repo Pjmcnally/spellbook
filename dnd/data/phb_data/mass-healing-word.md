@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Mass Healing Word"
-date:   2015-01-01
-source: PHB.258, BASIC.96
+title: "Mass Healing Word"
+date: 2015-01-01
+source: PHB.258
 tags: [cleric, level3, evocation]
 ---
 

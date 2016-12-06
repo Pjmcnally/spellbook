@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Antipathy/Sympathy"
-date:   2015-01-09
+title: "Antipathy/Sympathy"
+date: 2015-01-09
 source: PHB.214
-tags:   [druid, wizard, level8, enchantment]
+tags: [druid, wizard, level8, enchantment]
 ---
 
 **8th-level enchantment**

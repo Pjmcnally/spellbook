@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Gate"
-date:   2015-01-10
-source: PHB.244, BASIC.91
-tags:   [cleric, sorcerer, wizard, level9, conjuration]
+title: "Gate"
+date: 2015-01-10
+source: PHB.244
+tags: [cleric, sorcerer, wizard, level9, conjuration]
 ---
 
 **9th-level conjuration**

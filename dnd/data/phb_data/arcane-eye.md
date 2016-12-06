@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Arcane Eye"
-date:   2015-01-01
-source: PHB.214, BASIC.83
+title: "Arcane Eye"
+date: 2015-01-01
+source: PHB.214
 tags: [cleric (knowledge), cleric (arcana), wizard, level4, divination]
 ---
 

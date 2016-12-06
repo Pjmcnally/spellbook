@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Blink"
-date:   2015-01-01
+title: "Blink"
+date: 2015-01-01
 source: PHB.219
 tags: [cleric (trickery), sorcerer, warlock (archfey), wizard, level3, transmutation]
 ---

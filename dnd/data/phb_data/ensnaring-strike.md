@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Ensnaring Strike"
-date:   2014-08-24
+title: "Ensnaring Strike"
+date: 2014-08-24
 source: PHB.237
 tags: [paladin (ancients), ranger, level1, conjuration]
 ---

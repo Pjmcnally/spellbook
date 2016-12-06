@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Heroism"
-date:   2014-08-24
+title: "Heroism"
+date: 2014-08-24
 source: PHB.250
 tags: [bard, paladin, level1, enchantment]
 ---

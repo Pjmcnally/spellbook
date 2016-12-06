@@ -2,7 +2,7 @@
 layout: post
 title: "Flame Strike"
 date: 2015-07-14
-source: PHB.242, BASIC.91
+source: PHB.242
 tags: [cleric, cleric (light), cleric (war), paladin (devotion), warlock (fiend), level5, evocation]
 ---
 

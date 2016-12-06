@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Time Stop"
-date:   2015-01-10
-source: PHB.283, BASIC.103
-tags:   [sorcerer, wizard, level9, transmutation]
+title: "Time Stop"
+date: 2015-01-10
+source: PHB.283
+tags: [sorcerer, wizard, level9, transmutation]
 ---
 
 **9th-level transmutation**

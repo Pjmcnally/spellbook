@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Lightning Lure"
-date:   2015-12-07
+title: "Lightning Lure"
+date: 2015-12-07
 source: SCAG.143
 tags: [sorcerer, warlock, wizard, cantrip, evocation]
 ---

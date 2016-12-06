@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Tenser's Floating Disk"
-date:   2014-08-24
+title: "Tenser's Floating Disk"
+date: 2014-08-24
 source: PHB.282
 tags: [wizard, level1, ritual, conjuration]
 ---

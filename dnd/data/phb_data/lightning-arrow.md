@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Lightning Arrow"
-date:   2015-01-01
+title: "Lightning Arrow"
+date: 2015-01-01
 source: PHB.255
 tags: [ranger, level3, transmutation]
 ---

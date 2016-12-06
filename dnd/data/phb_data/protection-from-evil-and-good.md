@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Protection from Evil and Good"
-date:   2014-08-24
+title: "Protection from Evil and Good"
+date: 2014-08-24
 source: PHB.270
 tags: [cleric, paladin, paladin (devotion), warlock, wizard, level1, abjuration]
 ---

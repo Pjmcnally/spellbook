@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Tongues"
-date:   2015-01-02
+title: "Tongues"
+date: 2015-01-02
 source: PHB.283
 tags: [bard, cleric, sorcerer, warlock, wizard, level3, divination]
 ---

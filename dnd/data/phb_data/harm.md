@@ -2,7 +2,7 @@
 layout: post
 title: "Harm"
 date: 2015-07-30
-source: PHB.249, BASIC.92
+source: PHB.249
 tags: [cleric, level6, necromancy]
 ---
 

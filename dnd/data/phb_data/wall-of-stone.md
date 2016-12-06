@@ -2,7 +2,7 @@
 layout: post
 title: "Wall of Stone"
 date: 2015-07-30
-source: PHB.287, BASIC.104
+source: PHB.287
 tags: [druid, druid (desert), druid (mountain), monk (four elements), sorcerer, wizard, level5, evocation]
 ---
 

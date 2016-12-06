@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Blight"
-date:   2015-01-01
+title: "Blight"
+date: 2015-01-01
 source: PHB.219
 tags: [cleric (death), druid, druid (desert), paladin (oathbreaker), sorcerer, warlock, wizard, level4, necromancy]
 ---

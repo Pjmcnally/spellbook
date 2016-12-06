@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Entangle"
-date:   2014-08-24
+title: "Entangle"
+date: 2014-08-24
 source: PHB.238
 tags: [druid, level1, conjuration]
 ---

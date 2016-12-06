@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Silence"
-date:   2014-12-31
-source: PHB.275, BASIC.100
+title: "Silence"
+date: 2014-12-31
+source: PHB.275
 tags: [bard, cleric, druid (desert), monk (shadow), ranger, warlock (undying), level2, ritual, illusion]
 ---
 

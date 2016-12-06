@@ -2,7 +2,7 @@
 layout: post
 title: "Greater Invisibility"
 date: 2015-07-30
-source: PHB.246, BASIC.92
+source: PHB.246
 tags: [bard, druid (underdark), sorcerer, warlock (archfey), wizard, level4, illusion]
 ---
 

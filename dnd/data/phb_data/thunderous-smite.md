@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Thunderous Smite"
-date:   2014-08-24
+title: "Thunderous Smite"
+date: 2014-08-24
 source: PHB.282
 tags: [paladin, level1, evocation]
 ---

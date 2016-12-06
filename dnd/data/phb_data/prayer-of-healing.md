@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Prayer of Healing"
-date:   2014-12-31
-source: PHB.267, BASIC.98
+title: "Prayer of Healing"
+date: 2014-12-31
+source: PHB.267
 tags: [cleric, level2, evocation]
 ---
 
