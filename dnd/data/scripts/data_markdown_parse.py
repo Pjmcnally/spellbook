@@ -40,7 +40,7 @@ django.setup()
 # Lines 12-17 are normal imports. "# noqa" disables the linter for that line.
 import re # noqa
 from spellbook.models import (  # noqa
-    CastingTime, Class, Component, Duration, Domain, Level, Range, School,
+    CastingTime, Clss, Component, Duration, Domain, Level, Range, School,
     Source, SpellSource, Spell, SubDomain)
 from data_utils import get_file_list   # noqa
 from django.utils.text import slugify  # noqa
@@ -104,7 +104,7 @@ def get_or_create_classes(tags):
     class_objs = []
     for tag in tags:
         if tag in classes:
-            obj, created = Class.objects.get_or_create(
+            obj, created = Clss.objects.get_or_create(
                 name=tag,
                 slug=slugify(tag))
             class_objs.append(obj)
@@ -215,21 +215,21 @@ def get_or_create_components(string):
             full_name="verbal",
             short_name="V",
             slug="v",
-            count=0)
+            sort_val=0)
         comp_objs.append(v_obj)
     if "S" in comp_string:
         s_obj, created = Component.objects.get_or_create(
             full_name="somatic",
             short_name="S",
             slug="s",
-            count=1)
+            sort_val=1)
         comp_objs.append(s_obj)
     if "M" in comp_string:
         m_obj, created = Component.objects.get_or_create(
             full_name="material",
             short_name="M",
             slug="m",
-            count=2)
+            sort_val=2)
         comp_objs.append(m_obj)
 
     return comp_objs, comp_text
@@ -272,7 +272,7 @@ def get_or_create_sources(string):
             'short_name': 'EE',
             'slug': 'ee',
             'link': 'https://dnd.wizards.com/articles/features/elementalevil_playerscompanion',
-            'public': True},
+            'public': False},
         'BASIC': {
             'full_name': 'Basic Rules for Dungeons and Dragons',
             'short_name': 'BASIC',
@@ -308,7 +308,7 @@ def get_or_create_sources(string):
 
 def create_spell(content):
     name = get_name(content[2])
-    print(name)
+    # print(name)
 
     tags = parse_tags(content[5])
     classes = get_or_create_classes(tags)
@@ -358,14 +358,17 @@ def create_spell(content):
 
 
 def main():
-    data_path = '../markdown_data'
+    data_path = '../../data'
     data_ext = ['.md']
+
+    x = 0
 
     file_list = get_file_list(data_path, data_ext)
     for file_path in file_list:
+        x += 1
         content = open_file(file_path)
         spell = create_spell(content)
-        # print(spell)
+        print(x, spell)
 
 
 if __name__ == '__main__':
