@@ -307,40 +307,47 @@ def get_or_create_sources(string):
 
 
 def create_spell(content):
-    # This dict contains key, value pairs that represent the content and
-    # corresponding line number in the .md files being parsed.
-    l_dict = {
-        "title": 0,
-        "source": 1,
-        "tags": 2,
-        "level_school": 4,
-        "c_time": 6,
-        "range": 8,
-        "comp": 10,
-        "dura": 12,
-        "text": 14
-    }
 
-    name = get_name(content[l_dict["title"]])
-    tags = parse_tags(content[l_dict["tags"]])
+    def get_line(string):
+        # This dict contains key, value pairs that represent the content and
+        # corresponding line number in the .md files being parsed.
+        l_dict = {
+            "title": 0,
+            "source": 1,
+            "tags": 2,
+            "level_school": 4,
+            "c_time": 6,
+            "range": 8,
+            "comp": 10,
+            "dura": 12,
+            "text": 14
+        }
+
+        if string != "text":
+            return content[l_dict[string]]
+        else:
+            return content[l_dict["text"]:]
+
+    name = get_name(get_line("title"))
+    tags = parse_tags(get_line("tags"))
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
 
-    level = get_or_create_level(content[l_dict["level_school"]])
-    school = get_or_create_school(content[l_dict["level_school"]])
-    c_time, react_text = get_or_create_casting_time(content[l_dict["c_time"]])
-    rng, range_text = get_or_create_range(content[l_dict["range"]])
+    level = get_or_create_level(get_line("level_school"))
+    school = get_or_create_school(get_line("level_school"))
+    c_time, react_text = get_or_create_casting_time(get_line("c_time"))
+    rng, range_text = get_or_create_range(get_line("range"))
 
-    comps, component_text = get_or_create_components(content[l_dict["comp"]])
-    duration, concentration = get_or_create_duration(content[l_dict["dura"]])
-    sources = get_or_create_sources(content[l_dict["source"]])
+    comps, component_text = get_or_create_components(get_line("comp"))
+    duration, concentration = get_or_create_duration(get_line("dura"))
+    sources = get_or_create_sources(get_line("source"))
 
     spell, created = Spell.objects.get_or_create(
         name=name,
         slug=slugify(name),
-        text="".join(content[l_dict["text"]:]),
+        text="".join(get_line("text")),
         concentration=concentration,
-        ritual="ritual" in content[l_dict["level_school"]].lower(),
+        ritual="ritual" in get_line("level_school").lower(),
         cast_time_text=react_text,
         component_text=component_text,
         range_text=range_text,
