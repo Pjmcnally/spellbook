@@ -309,36 +309,42 @@ def get_or_create_sources(string):
 def create_spell(content):
     # This dict contains key, value pairs that represent the content and
     # corresponding line number in the .md files being parsed.
-    line_dict = {
-
-
+    l_dict = {
+        "title": 0,
+        "source": 1,
+        "tags": 2,
+        "level_school": 4,
+        "c_time": 6,
+        "range": 8,
+        "comp": 10,
+        "dura": 12,
+        "text": 14
     }
-    name = get_name(content[2])
-    # print(name)
 
-    tags = parse_tags(content[5])
+    name = get_name(content[l_dict["title"]])
+    tags = parse_tags(content[l_dict["tags"]])
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
 
-    level = get_or_create_level(content[8])
-    school = get_or_create_school(content[8])
-    cast_time, react_text = get_or_create_casting_time(content[10])
-    rng, range_text = get_or_create_range(content[12])
+    level = get_or_create_level(content[l_dict["level_school"]])
+    school = get_or_create_school(content[l_dict["level_school"]])
+    c_time, react_text = get_or_create_casting_time(content[l_dict["c_time"]])
+    rng, range_text = get_or_create_range(content[l_dict["range"]])
 
-    duration, concentration = get_or_create_duration(content[16])
-    components, component_text = get_or_create_components(content[14])
-    sources = get_or_create_sources(content[4])
+    comps, component_text = get_or_create_components(content[l_dict["comp"]])
+    duration, concentration = get_or_create_duration(content[l_dict["dura"]])
+    sources = get_or_create_sources(content[l_dict["source"]])
 
     spell, created = Spell.objects.get_or_create(
         name=name,
         slug=slugify(name),
-        text="".join(content[18:]),
+        text="".join(content[l_dict["text"]:]),
         concentration=concentration,
-        ritual="ritual" in content[8].lower(),
+        ritual="ritual" in content[l_dict["level_school"]].lower(),
         cast_time_text=react_text,
         component_text=component_text,
         range_text=range_text,
-        casting_time=cast_time,
+        casting_time=c_time,
         duration=duration,
         level=level,
         rng=rng,
@@ -348,7 +354,7 @@ def create_spell(content):
     for item in classes:
         spell.clss.add(item)
 
-    for item in components:
+    for item in comps:
         spell.component.add(item)
 
     for item in sub_domains:
