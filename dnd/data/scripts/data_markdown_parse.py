@@ -307,6 +307,12 @@ def get_or_create_sources(string):
 
 
 def create_spell(content):
+    # This dict contains key, value pairs that represent the content and
+    # corresponding line number in the .md files being parsed.
+    line_dict = {
+
+
+    }
     name = get_name(content[2])
     # print(name)
 
