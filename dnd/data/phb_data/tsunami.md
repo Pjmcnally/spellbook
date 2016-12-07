@@ -1,10 +1,6 @@
----
-layout: post
 title: "Tsunami"
-date: 2015-01-10
 source: PHB.284
 tags: [druid, level8, conjuration]
----
 
 **8th-level conjuration**
 

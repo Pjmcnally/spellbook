@@ -1,10 +1,6 @@
----
-layout: post
 title: "Mass Heal"
-date: 2015-01-10
 source: PHB.258
 tags: [cleric, level9, evocation]
----
 
 **9th-level evocation**
 

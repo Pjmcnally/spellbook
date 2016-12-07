@@ -1,10 +1,6 @@
----
-layout: post
 title: "Eyebite"
-date: 2015-07-14
 source: PHB.238
 tags: [bard, sorcerer, warlock, wizard, level6, necromancy]
----
 
 **6th-level necromancy**
 

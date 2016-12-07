@@ -1,10 +1,6 @@
----
-layout: post
 title: "Faerie Fire"
-date: 2014-08-24
 source: PHB.239
 tags: [elf (drow), bard, cleric (light), druid, warlock (archfey), level1, evocation]
----
 
 **1st-level evocation**
 

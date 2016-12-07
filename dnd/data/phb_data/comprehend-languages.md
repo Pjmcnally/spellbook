@@ -1,10 +1,6 @@
----
-layout: post
 title: "Comprehend Languages"
-date: 2014-08-24
 source: PHB.224
 tags: [bard, sorcerer, warlock, wizard, level1, ritual, divination]
----
 
 **1st-level divination (ritual)**
 

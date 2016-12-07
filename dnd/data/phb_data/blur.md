@@ -1,10 +1,6 @@
----
-layout: post
 title: "Blur"
-date: 2015-01-07
 source: PHB.219
 tags: [druid (desert), sorcerer, wizard, level2, illusion]
----
 
 **2nd-level illusion**
 

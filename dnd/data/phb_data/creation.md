@@ -1,10 +1,6 @@
----
-layout: post
 title: "Creation"
-date: 2015-07-14
 source: PHB.229
 tags: [sorcerer, wizard, level5, illusion]
----
 
 **5th-level illusion**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Friends"
-date: 2014-08-24
 source: PHB.244
 tags: [bard, sorcerer, warlock, wizard, cantrip, enchantment]
----
 
 **Enchantment cantrip**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Geas"
-date: 2015-07-30
 source: PHB.245
 tags: [cleric, wizard, paladin, paladin (crown), druid, bard, level5, enchantment]
----
 
 **5th-level enchantment**
 

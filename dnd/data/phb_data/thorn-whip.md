@@ -1,10 +1,6 @@
----
-layout: post
 title: "Thorn Whip"
-date: 2014-08-24
 source: PHB.282
 tags: [druid, cantrip, transmutation]
----
 
 **Transmutation cantrip**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Bane"
-date: 2014-08-24
 source: PHB.216
 tags: [bard, cleric, paladin (vengeance), level1, enchantment]
----
 
 **1st-level enchantment**
 

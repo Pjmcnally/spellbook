@@ -1,10 +1,6 @@
----
-layout: post
 title: "Moonbeam"
-date: 2015-07-30
 source: PHB.261
 tags: [druid, paladin (ancients), level2, evocation]
----
 
 **2nd-level evocation**
 

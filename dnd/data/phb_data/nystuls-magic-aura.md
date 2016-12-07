@@ -1,10 +1,6 @@
----
-layout: post
 title: "Nystul's Magic Aura"
-date: 2015-07-30
 source: PHB.263
 tags: [cleric (arcana), wizard, level2, illusion]
----
 
 **2nd-level illusion**
 

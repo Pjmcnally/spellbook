@@ -1,10 +1,6 @@
----
-layout: post
 title: "Commune with Nature"
-date: 2015-07-14
 source: PHB.224
 tags: [barbarian (totem warrior), druid, druid (arctic), druid (forest), paladin (ancients), ranger, level5, ritual, divination]
----
 
 **5th-level divination (ritual)**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Dominate Beast"
-date: 2015-07-14
 source: PHB.234
 tags: [cleric (nature), druid, warlock (archfey), warlock (great old one), sorcerer, level4, enchantment]
----
 
 **4th-level enchantment**
 

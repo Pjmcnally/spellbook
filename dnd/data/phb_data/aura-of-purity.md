@@ -1,10 +1,6 @@
----
-layout: post
 title: "Aura of Purity"
-date: 2015-01-01
 source: PHB.216
 tags: [paladin, level4, abjuration]
----
 
 **4th-level abjuration**
 

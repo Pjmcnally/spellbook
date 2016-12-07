@@ -1,10 +1,6 @@
----
-layout: post
 title: "Message"
-date: 2014-08-24
 source: PHB.259
 tags: [bard, sorcerer, wizard, cantrip, transmutation]
----
 
 **Transmutation cantrip**
 

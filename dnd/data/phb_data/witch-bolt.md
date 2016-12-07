@@ -1,10 +1,6 @@
----
-layout: post
 title: "Witch Bolt"
-date: 2014-08-24
 source: PHB.289
 tags: [sorcerer, warlock, wizard, level1, evocation]
----
 
 **1st-level evocation**
 

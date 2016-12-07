@@ -1,10 +1,6 @@
----
-layout: post
 title: "Awaken"
-date: 2015-07-14
 source: PHB.216
 tags: [bard, druid, level5, transmutation]
----
 
 **5th-level transmutation**
 

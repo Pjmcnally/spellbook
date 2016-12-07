@@ -1,10 +1,6 @@
----
-layout: post
 title: "Magic Jar"
-date: 2015-07-30
 source: PHB.257
 tags: [wizard, level6, necromancy]
----
 
 **6th-level necromancy**
 

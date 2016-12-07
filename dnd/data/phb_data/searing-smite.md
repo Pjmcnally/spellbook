@@ -1,10 +1,6 @@
----
-layout: post
 title: "Searing Smite"
-date: 2014-08-24
 source: PHB.274
 tags: [paladin, level1, evocation]
----
 
 **1st-level evocation**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Heat Metal"
-date: 2015-07-30
 source: PHB.250
 tags: [bard, druid, level2, transmutation]
----
 
 **2nd-level transmutation**
 

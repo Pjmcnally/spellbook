@@ -1,10 +1,6 @@
----
-layout: post
 title: "Enthrall"
-date: 2015-07-14
 source: PHB.238
 tags: [bard, warlock, level2, enchantment]
----
 
 **2nd-level enchantment**
 

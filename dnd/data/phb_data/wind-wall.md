@@ -1,10 +1,6 @@
----
-layout: post
 title: "Wind Wall"
-date: 2015-07-30
 source: PHB.288
 tags: [cleric (nature), druid, ranger, level3, evocation]
----
 
 **3rd-level evocation**
 

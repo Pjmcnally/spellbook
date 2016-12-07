@@ -1,10 +1,6 @@
----
-layout: post
 title: "Identify"
-date: 2014-08-24
 source: PHB.252
 tags: [bard, cleric (knowledge), wizard, level1, ritual, divination]
----
 
 **1st-level divination (ritual)**
 

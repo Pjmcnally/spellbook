@@ -1,10 +1,6 @@
----
-layout: post
 title: "Mind Blank"
-date: 2015-01-10
 source: PHB.259
 tags: [bard, wizard, level8, abjuration]
----
 
 **8th-level abjuration**
 

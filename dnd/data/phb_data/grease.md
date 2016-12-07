@@ -1,10 +1,6 @@
----
-layout: post
 title: "Grease"
-date: 2014-08-24
 source: PHB.246
 tags: [wizard, level1, conjuration]
----
 
 **1st-level conjuration**
 

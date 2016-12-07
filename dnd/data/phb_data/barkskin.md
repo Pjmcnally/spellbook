@@ -1,10 +1,6 @@
----
-layout: post
 title: "Barkskin"
-date: 2015-01-02
 source: PHB.217
 tags: [cleric (nature), druid, druid (forest), ranger, level2, transmutation]
----
 
 **2nd-level transmutation**
 

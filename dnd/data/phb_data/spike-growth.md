@@ -1,10 +1,6 @@
----
-layout: post
 title: "Spike Growth"
-date: 2015-07-30
 source: PHB.277
 tags: [cleric (nature), druid, druid (arctic), druid (mountain), ranger, level2, transmutation]
----
 
 **2nd-level transmutation**
 

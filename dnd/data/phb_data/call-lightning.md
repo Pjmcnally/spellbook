@@ -1,10 +1,6 @@
----
-layout: post
 title: "Call Lightning"
-date: 2015-01-01
 source: PHB.220
 tags: [cleric (tempest), druid, druid (forest), level3, conjuration]
----
 
 **3rd-level conjuration**
 

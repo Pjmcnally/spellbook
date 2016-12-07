@@ -1,10 +1,6 @@
----
-layout: post
 title: "Sleet Storm"
-date: 2015-01-02
 source: PHB.276
 tags: [cleric (tempest), druid, druid (arctic), sorcerer, wizard, level3, conjuration]
----
 
 **3rd-level conjuration**
 

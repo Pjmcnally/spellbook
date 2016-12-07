@@ -1,10 +1,6 @@
----
-layout: post
 title: "Seeming"
-date: 2015-07-30
 source: PHB.274
 tags: [bard, sorcerer, warlock (archfey), wizard, level5, illusion]
----
 
 **5th-level illusion**
 

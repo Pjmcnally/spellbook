@@ -1,10 +1,6 @@
----
-layout: post
 title: "Hallucinatory Terrain"
-date: 2015-07-30
 source: PHB.249
 tags: [bard, druid, druid (desert), warlock, wizard, level4, illusion]
----
 
 **4th-level illusion**
 

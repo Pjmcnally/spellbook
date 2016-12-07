@@ -1,10 +1,6 @@
----
-layout: post
 title: "Guardian of Faith"
-date: 2015-07-30
 source: PHB.246
 tags: [cleric, cleric (life), cleric (light), paladin (devotion), paladin (crown), level4, conjuration]
----
 
 **4th-level conjuration**
 

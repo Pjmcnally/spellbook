@@ -1,10 +1,6 @@
----
-layout: post
 title: "Speak with Dead"
-date: 2015-01-02
 source: PHB.277
 tags: [bard, cleric, cleric (knowledge), warlock (undying), level3, necromancy]
----
 
 **3rd-level necromancy**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Plane Shift"
-date: 2015-01-11
 source: PHB.266
 tags: [cleric, druid, sorcerer, warlock, wizard, level7, conjuration]
----
 
 **7th-level conjuration**
 

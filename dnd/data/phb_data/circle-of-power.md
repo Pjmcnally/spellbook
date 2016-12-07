@@ -1,10 +1,6 @@
----
-layout: post
 title: "Circle of Power"
-date: 2015-07-14
 source: PHB.221
 tags: [paladin, paladin (crown), level5, abjuration]
----
 
 **5th-level abjuration**
 

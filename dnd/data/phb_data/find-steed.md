@@ -1,10 +1,6 @@
----
-layout: post
 title: "Find Steed"
-date: 2015-07-14
 source: PHB.240
 tags: [paladin, level2, conjuration]
----
 
 **2nd-level conjuration**
 

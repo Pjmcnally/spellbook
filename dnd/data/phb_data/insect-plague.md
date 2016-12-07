@@ -1,10 +1,6 @@
----
-layout: post
 title: "Insect Plague"
-date: 2015-07-30
 source: PHB.254
 tags: [cleric, cleric (nature), cleric (tempest), druid, druid (desert), druid (grassland), druid (swamp), druid (underdark), sorcerer, level5, conjuration]
----
 
 **5th-level conjuration**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Shield of Faith"
-date: 2014-08-24
 source: PHB.275
 tags: [cleric, cleric (war), paladin, level1, abjuration]
----
 
 **1st-level abjuration**
 

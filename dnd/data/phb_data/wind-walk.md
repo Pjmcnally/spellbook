@@ -1,10 +1,6 @@
----
-layout: post
 title: "Wind Walk"
-date: 2015-07-30
 source: PHB.288
 tags: [druid, level6, transmutation]
----
 
 **6th-level transmutation**
 

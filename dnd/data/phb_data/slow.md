@@ -1,10 +1,6 @@
----
-layout: post
 title: "Slow"
-date: 2015-01-02
 source: PHB.277
 tags: [druid (arctic), sorcerer, wizard, level3, transmutation]
----
 
 **3rd-level transmutation**
 

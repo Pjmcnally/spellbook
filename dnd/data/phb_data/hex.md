@@ -1,10 +1,6 @@
----
-layout: post
 title: "Hex"
-date: 2014-08-24
 source: PHB.251
 tags: [elf (mul daya), warlock, level1, enchantment]
----
 
 **1st-level enchantment**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Fabricate"
-date: 2015-07-14
 source: PHB.239
 tags: [wizard, level4, transmutation]
----
 
 **4th-level transmutation**
 

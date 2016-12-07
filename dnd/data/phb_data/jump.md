@@ -1,10 +1,6 @@
----
-layout: post
 title: "Jump"
-date: 2014-08-24
 source: PHB.254
 tags: [druid, ranger, sorcerer, wizard, level1, transmutation]
----
 
 **1st-level transmutation**
 

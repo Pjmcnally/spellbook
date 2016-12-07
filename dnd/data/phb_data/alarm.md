@@ -1,10 +1,6 @@
----
-layout: post
 title: "Alarm"
-date: 2014-08-24
 source: PHB.211
 tags: [ranger, wizard, level1, ritual, abjuration]
----
 
 **1st-level abjuration (ritual)**
 

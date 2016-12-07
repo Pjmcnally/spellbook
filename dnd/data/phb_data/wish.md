@@ -1,10 +1,6 @@
----
-layout: post
 title: "Wish"
-date: 2015-01-10
 source: PHB.288
 tags: [sorcerer, wizard, level9, conjuration]
----
 
 **9th-level conjuration**
 

@@ -1,10 +1,6 @@
----
-layout: post
 title: "Sunburst"
-date: 2015-01-10
 source: PHB.279
 tags: [druid, sorcerer, wizard, level8, evocation]
----
 
 **8th-level evocation**
 

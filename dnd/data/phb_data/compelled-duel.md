@@ -1,10 +1,6 @@
----
-layout: post
 title: "Compelled Duel"
-date: 2014-08-24
 source: PHB.224
 tags: [paladin, paladin (crown), level1, enchantment]
----
 
 **1st-level enchantment**
 

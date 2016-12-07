@@ -1,10 +1,6 @@
----
-layout: post
 title: "Daylight"
-date: 2015-01-01
 source: PHB.230
 tags: [cleric, cleric (light), druid, druid (grassland), paladin, ranger, sorcerer, level3, evocation]
----
 
 **3rd-level evocation**
 

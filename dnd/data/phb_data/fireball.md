@@ -1,10 +1,6 @@
----
-layout: post
 title: "Fireball"
-date: 2015-01-01
 source: PHB.241
 tags: [cleric (light), monk (four elements), sorcerer, warlock (fiend), wizard, level3, evocation]
----
 
 **3rd-level evocation**
 

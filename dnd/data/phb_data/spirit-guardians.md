@@ -1,10 +1,6 @@
----
-layout: post
 title: "Spirit Guardians"
-date: 2015-01-02
 source: PHB.278
 tags: [cleric, cleric (war), paladin (crown), level3, conjuration]
----
 
 **3rd-level conjuration**
 

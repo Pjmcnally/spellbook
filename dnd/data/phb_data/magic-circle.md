@@ -1,10 +1,6 @@
----
-layout: post
 title: "Magic Circle"
-date: 2015-01-01
 source: PHB.256
 tags: [cleric, cleric (arcana), paladin, warlock, wizard, level3, abjuration]
----
 
 **3rd-level abjuration**
 

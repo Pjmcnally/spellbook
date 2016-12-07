@@ -1,10 +1,6 @@
----
-layout: post
 title: "Power Word Heal"
-date: 2015-01-10
 source: PHB.266
 tags: [bard, level9, evocation]
----
 
 **9th-level evocation**
 
