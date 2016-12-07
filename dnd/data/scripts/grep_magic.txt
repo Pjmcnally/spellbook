@@ -1,0 +1,15 @@
+This is the grep/loop I wrote to clean out all the unnecessary lines I didn't want.
+
+line 8 creates a loop over each file in the folder
+line 9, 10, 12 redirct all lines that do NO match the regex to a new temp file
+lines 11, 13 remove unneeded temp files.
+line 15 renames the last temp file to overwrite the original file.
+
+for file in ./*.md ; do
+    grep -vE "^---$" $file > $file.1.tmp;
+    grep -vE "^layout: post$" $file.1.tmp > $file.2.tmp;
+    rm $file.1.tmp;
+    grep -vE "^date:.+$" $file.2.tmp > $file.3.tmp;
+    rm $file.2.tmp;
+    mv $file.3.tmp $file;
+done
