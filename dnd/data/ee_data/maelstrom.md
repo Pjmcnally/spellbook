@@ -1,10 +1,6 @@
----
-layout: post
 title: "Maelstrom"
-date: 2015-11-19
 source: EE.20
 tags: [druid, level5, evocation]
----
 
 **5th-level evocation**
 

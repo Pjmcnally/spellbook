@@ -1,10 +1,6 @@
----
-layout: post
 title: "Dust Devil"
-date: 2015-11-13
 source: EE.17
 tags: [druid, sorcerer, wizard, level2, conjuration]
----
 
 **2nd-level conjuration**
 

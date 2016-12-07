@@ -1,10 +1,6 @@
----
-layout: post
 title: "Warding Wind"
-date: 2015-08-31
 source: EE.23
 tags: [bard, druid, sorcerer, level2, ]
----
 
 **2nd-level evocation**
 

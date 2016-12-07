@@ -1,10 +1,6 @@
----
-layout: post
 title: "Shape Water"
-date: 2015-11-11
 source: EE.21
 tags: [genasai (water), druid, sorcerer, wizard, cantrip, transmutation]
----
 
 **Transmutation cantrip**
 

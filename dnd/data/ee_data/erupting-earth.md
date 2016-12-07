@@ -1,10 +1,6 @@
----
-layout: post
 title: "Erupting Earth"
-date: 2015-11-19
 source: EE.17
 tags: [druid, sorcerer, wizard, level3, transmutation]
----
 
 **3rd-level transmutation**
 

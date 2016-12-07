@@ -1,10 +1,6 @@
----
-layout: post
 title: "Ice Knife"
-date: 2015-11-12
 source: EE.19
 tags: [druid, sorcerer, wizard, level1, conjuration]
----
 
 **1st-level conjuration**
 

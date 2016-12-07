@@ -1,10 +1,6 @@
----
-layout: post
 title: "Gust"
-date: 2015-11-11
 source: EE.19
 tags: [druid, sorcerer, wizard, cantrip, transmutation]
----
 
 **Transmutation cantrip**
 

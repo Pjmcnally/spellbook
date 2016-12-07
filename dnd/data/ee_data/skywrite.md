@@ -1,10 +1,6 @@
----
-layout: post
 title: "Skywrite"
-date: 2015-08-31
 source: EE.22
 tags: [bard, druid, wizard, level2, ritual, transmutation]
----
 
 **2nd-level transmutation (ritual)**
 
