@@ -12,13 +12,18 @@ def spell_list(request, slug=None):
     else:
         spells = Spell.objects.filter(source__public=True)
 
-    # For my data at the moment the method of using a dict to sort
-    # as opposed to .filter for each level seems faster so I am using it
-    spell_dict = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [],
-                  8: [], 9: []}
-
-    for spell in spells:
-        spell_dict[spell.level.num].append(spell)
+    spell_dict = {
+        0: spells.filter(level__num=0),
+        1: spells.filter(level__num=1),
+        2: spells.filter(level__num=2),
+        3: spells.filter(level__num=3),
+        4: spells.filter(level__num=4),
+        5: spells.filter(level__num=5),
+        6: spells.filter(level__num=6),
+        7: spells.filter(level__num=7),
+        8: spells.filter(level__num=8),
+        9: spells.filter(level__num=9),
+    }
 
     context = {
         'classes': classes,
