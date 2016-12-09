@@ -1,4 +1,4 @@
-title: "Mordenkainen's Faithful Hound"
+title: "Faithful Hound"
 source: SRD.142
 tags: [wizard, level4, conjuration]
 

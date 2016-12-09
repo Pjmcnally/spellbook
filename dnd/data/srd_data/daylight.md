@@ -1,4 +1,4 @@
-SRD.133title: "Daylight"
+title: "Daylight"
 source: SRD.133
 tags: [cleric, cleric (light), druid, druid (grassland), paladin, ranger, sorcerer, level3, evocation]
 

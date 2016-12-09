@@ -1,4 +1,4 @@
-SRD.136title: "Divine Favor"
+title: "Divine Favor"
 source: SRD.136
 tags: [cleric (war), paladin, level1, evocation]
 

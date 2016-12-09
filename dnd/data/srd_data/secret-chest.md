@@ -1,4 +1,4 @@
-title: "Leomund's Secret Chest"
+title: "Secret Chest"
 source: SRD.177
 tags: [cleric (arcana), wizard, level4, conjuration]
 
