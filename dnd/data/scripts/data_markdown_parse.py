@@ -55,7 +55,7 @@ def get_or_create_casting_time(string):
     match = re.search(cast_time_pat, string)
 
     cast_time = match.group("cast_time")
-    react_text = match.group("react_text")
+    react_text = (match.group("react_text") or "")
 
     obj, created = CastingTime.objects.get_or_create(
         text=cast_time,
@@ -72,7 +72,7 @@ def get_or_create_range(string):
 
     match = re.search(range_pat, string)
     rng = match.group("rng").strip()
-    range_text = match.group("range_text")
+    range_text = (match.group("range_text") or "")
 
     if range_text:
         range_text = range_text.replace("(", "").replace(")", "")
@@ -208,7 +208,7 @@ def get_or_create_components(string):
 
     match = re.search(comp_pat, string)
     comp_string = match.group('components')
-    comp_text = match.group('comp_text')
+    comp_text = (match.group('comp_text') or "")
 
     if "V" in comp_string:
         v_obj, created = Component.objects.get_or_create(
@@ -259,25 +259,29 @@ def get_or_create_sources(string):
             'full_name': "Player's Handbook",
             'short_name': 'PHB',
             'slug': 'phb',
+            'version': 'First Printing w/corrections (August 2014)',
             'link': 'https://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook',
             'public': False},
         'SCAG': {
             'full_name': "Sword Coast Adventurer's Guide",
             'short_name': 'SCAG',
             'slug': 'scag',
+            'version': 'First Printing (November 2015)',
             'link': 'https://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide',
             'public': False},
         'EE': {
             'full_name': "Elemental Evil Player's Companion",
             'short_name': 'EE',
             'slug': 'ee',
+            'version': '(March 2015)',
             'link': 'https://dnd.wizards.com/articles/features/elementalevil_playerscompanion',
             'public': False},
-        'BASIC': {
-            'full_name': 'Basic Rules for Dungeons and Dragons',
-            'short_name': 'BASIC',
-            'slug': 'basic',
-            'link': 'https://dnd.wizards.com/articles/features/basicrules',
+        'SRD': {
+            'full_name': '5E System Reference Document',
+            'short_name': 'SRD',
+            'slug': 'srd',
+            'version': '5.1',
+            'link': 'https://dnd.wizards.com/articles/features/systems-reference-document-srd',
             'public': True}
     }
 
@@ -329,6 +333,7 @@ def create_spell(content):
             return content[l_dict["text"]:]
 
     name = get_name(get_line("title"))
+    print(name)
     tags = parse_tags(get_line("tags"))
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
@@ -387,7 +392,7 @@ def main():
         x += 1
         content = open_file(file_path)
         spell = create_spell(content)
-        print(x, spell)
+        # print(x, spell)
 
 
 if __name__ == '__main__':

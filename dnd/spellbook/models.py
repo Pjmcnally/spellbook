@@ -128,6 +128,7 @@ class Source(models.Model):
         max_length=20,
         unique=True,
         help_text='A lable for URL config',)
+    version = models.CharField(max_length=100)
     link = models.URLField(max_length=255)
     public = models.BooleanField()
 
@@ -175,9 +176,9 @@ class Spell(models.Model):
     concentration = models.BooleanField()
     ritual = models.BooleanField()
 
-    cast_time_text = models.CharField(max_length=100, null=True)
-    component_text = models.TextField(null=True)
-    range_text = models.CharField(max_length=100, null=True)
+    cast_time_text = models.CharField(max_length=100)
+    component_text = models.TextField()
+    range_text = models.CharField(max_length=100)
 
     casting_time = models.ForeignKey('CastingTime', on_delete=models.CASCADE)
     duration = models.ForeignKey('Duration', on_delete=models.CASCADE)
