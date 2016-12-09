@@ -12,28 +12,17 @@ def spell_list(request, slug=None):
     else:
         spells = Spell.objects.filter(source__public=True)
 
-    cantrips = spells.filter(level__num=0)
-    spells_1 = spells.filter(level__num=1)
-    spells_2 = spells.filter(level__num=2)
-    spells_3 = spells.filter(level__num=3)
-    spells_4 = spells.filter(level__num=4)
-    spells_5 = spells.filter(level__num=5)
-    spells_6 = spells.filter(level__num=6)
-    spells_7 = spells.filter(level__num=7)
-    spells_8 = spells.filter(level__num=8)
-    spells_9 = spells.filter(level__num=9)
-
     spell_dict = {
-        0: cantrips,
-        1: spells_1,
-        2: spells_2,
-        3: spells_3,
-        4: spells_4,
-        5: spells_5,
-        6: spells_6,
-        7: spells_7,
-        8: spells_8,
-        9: spells_9,
+        0: spells.filter(level__num=0),
+        1: spells.filter(level__num=1),
+        2: spells.filter(level__num=2),
+        3: spells.filter(level__num=3),
+        4: spells.filter(level__num=4),
+        5: spells.filter(level__num=5),
+        6: spells.filter(level__num=6),
+        7: spells.filter(level__num=7),
+        8: spells.filter(level__num=8),
+        9: spells.filter(level__num=9),
     }
 
     context = {
