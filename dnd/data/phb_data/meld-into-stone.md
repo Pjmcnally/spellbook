@@ -1,4 +1,4 @@
-title: "Meld Into Stone"
+title: "Meld into Stone"
 source: PHB.259
 tags: [cleric, druid, druid (mountain), level3, ritual, transmutation]
 

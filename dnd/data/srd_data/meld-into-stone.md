@@ -1,4 +1,4 @@
-title: "Meld Into Stone"
+title: "Meld into Stone"
 source: SRD.163
 tags: [cleric, druid, druid (mountain), level3, ritual, transmutation]
 

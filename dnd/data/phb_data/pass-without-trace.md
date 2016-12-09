@@ -1,4 +1,4 @@
-title: "Pass Without Trace"
+title: "Pass without Trace"
 source: PHB.264
 tags: [cleric (trickery), druid, druid (grassland), monk (shadow), ranger, level2, abjuration]
 

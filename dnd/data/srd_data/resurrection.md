@@ -1,6 +1,6 @@
 title: "Resurrection"
 source: SRD.175
-tags: [bard, cleric, druid, level7, necromancy]
+tags: [bard, cleric, level7, necromancy]
 
 **7th-level necromancy**
 
