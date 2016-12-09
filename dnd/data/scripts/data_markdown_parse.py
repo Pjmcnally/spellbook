@@ -40,7 +40,7 @@ django.setup()
 # Lines 12-17 are normal imports. "# noqa" disables the linter for that line.
 import re # noqa
 from spellbook.models import (  # noqa
-    CastingTime, Class, Component, Duration, Domain, Level, Range, School,
+    CastingTime, Clss, Component, Duration, Domain, Level, Range, School,
     Source, SpellSource, Spell, SubDomain)
 from data_utils import get_file_list   # noqa
 from django.utils.text import slugify  # noqa
@@ -55,7 +55,7 @@ def get_or_create_casting_time(string):
     match = re.search(cast_time_pat, string)
 
     cast_time = match.group("cast_time")
-    react_text = match.group("react_text")
+    react_text = (match.group("react_text") or "")
 
     obj, created = CastingTime.objects.get_or_create(
         text=cast_time,
@@ -72,7 +72,7 @@ def get_or_create_range(string):
 
     match = re.search(range_pat, string)
     rng = match.group("rng").strip()
-    range_text = match.group("range_text")
+    range_text = (match.group("range_text") or "")
 
     if range_text:
         range_text = range_text.replace("(", "").replace(")", "")
@@ -104,7 +104,7 @@ def get_or_create_classes(tags):
     class_objs = []
     for tag in tags:
         if tag in classes:
-            obj, created = Class.objects.get_or_create(
+            obj, created = Clss.objects.get_or_create(
                 name=tag,
                 slug=slugify(tag))
             class_objs.append(obj)
@@ -208,28 +208,28 @@ def get_or_create_components(string):
 
     match = re.search(comp_pat, string)
     comp_string = match.group('components')
-    comp_text = match.group('comp_text')
+    comp_text = (match.group('comp_text') or "")
 
     if "V" in comp_string:
         v_obj, created = Component.objects.get_or_create(
             full_name="verbal",
             short_name="V",
             slug="v",
-            count=0)
+            sort_val=0)
         comp_objs.append(v_obj)
     if "S" in comp_string:
         s_obj, created = Component.objects.get_or_create(
             full_name="somatic",
             short_name="S",
             slug="s",
-            count=1)
+            sort_val=1)
         comp_objs.append(s_obj)
     if "M" in comp_string:
         m_obj, created = Component.objects.get_or_create(
             full_name="material",
             short_name="M",
             slug="m",
-            count=2)
+            sort_val=2)
         comp_objs.append(m_obj)
 
     return comp_objs, comp_text
@@ -259,25 +259,29 @@ def get_or_create_sources(string):
             'full_name': "Player's Handbook",
             'short_name': 'PHB',
             'slug': 'phb',
+            'version': 'First Printing w/corrections (August 2014)',
             'link': 'https://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook',
             'public': False},
         'SCAG': {
             'full_name': "Sword Coast Adventurer's Guide",
             'short_name': 'SCAG',
             'slug': 'scag',
+            'version': 'First Printing (November 2015)',
             'link': 'https://dnd.wizards.com/products/tabletop-games/rpg-products/sc-adventurers-guide',
             'public': False},
         'EE': {
             'full_name': "Elemental Evil Player's Companion",
             'short_name': 'EE',
             'slug': 'ee',
+            'version': '(March 2015)',
             'link': 'https://dnd.wizards.com/articles/features/elementalevil_playerscompanion',
-            'public': True},
-        'BASIC': {
-            'full_name': 'Basic Rules for Dungeons and Dragons',
-            'short_name': 'BASIC',
-            'slug': 'basic',
-            'link': 'https://dnd.wizards.com/articles/features/basicrules',
+            'public': False},
+        'SRD': {
+            'full_name': '5E System Reference Document',
+            'short_name': 'SRD',
+            'slug': 'srd',
+            'version': '5.1',
+            'link': 'https://dnd.wizards.com/articles/features/systems-reference-document-srd',
             'public': True}
     }
 
@@ -307,32 +311,52 @@ def get_or_create_sources(string):
 
 
 def create_spell(content):
-    name = get_name(content[2])
-    print(name)
 
-    tags = parse_tags(content[5])
+    def get_line(string):
+        # This dict contains key, value pairs that represent the content and
+        # corresponding line number in the .md files being parsed.
+        l_dict = {
+            "title": 0,
+            "source": 1,
+            "tags": 2,
+            "level_school": 4,
+            "c_time": 6,
+            "range": 8,
+            "comp": 10,
+            "dura": 12,
+            "text": 14
+        }
+
+        if string != "text":
+            return content[l_dict[string]]
+        else:
+            return content[l_dict["text"]:]
+
+    name = get_name(get_line("title"))
+    print(name)
+    tags = parse_tags(get_line("tags"))
     classes = get_or_create_classes(tags)
     sub_domains = get_or_create_domains(tags)
 
-    level = get_or_create_level(content[8])
-    school = get_or_create_school(content[8])
-    cast_time, react_text = get_or_create_casting_time(content[10])
-    rng, range_text = get_or_create_range(content[12])
+    level = get_or_create_level(get_line("level_school"))
+    school = get_or_create_school(get_line("level_school"))
+    c_time, react_text = get_or_create_casting_time(get_line("c_time"))
+    rng, range_text = get_or_create_range(get_line("range"))
 
-    duration, concentration = get_or_create_duration(content[16])
-    components, component_text = get_or_create_components(content[14])
-    sources = get_or_create_sources(content[4])
+    comps, component_text = get_or_create_components(get_line("comp"))
+    duration, concentration = get_or_create_duration(get_line("dura"))
+    sources = get_or_create_sources(get_line("source"))
 
     spell, created = Spell.objects.get_or_create(
         name=name,
         slug=slugify(name),
-        text="".join(content[18:]),
+        text="".join(get_line("text")),
         concentration=concentration,
-        ritual="ritual" in content[8].lower(),
+        ritual="ritual" in get_line("level_school").lower(),
         cast_time_text=react_text,
         component_text=component_text,
         range_text=range_text,
-        casting_time=cast_time,
+        casting_time=c_time,
         duration=duration,
         level=level,
         rng=rng,
@@ -342,7 +366,7 @@ def create_spell(content):
     for item in classes:
         spell.clss.add(item)
 
-    for item in components:
+    for item in comps:
         spell.component.add(item)
 
     for item in sub_domains:
@@ -358,14 +382,17 @@ def create_spell(content):
 
 
 def main():
-    data_path = '../markdown_data'
+    data_path = '../../data'
     data_ext = ['.md']
+
+    x = 0
 
     file_list = get_file_list(data_path, data_ext)
     for file_path in file_list:
+        x += 1
         content = open_file(file_path)
         spell = create_spell(content)
-        # print(spell)
+        # print(x, spell)
 
 
 if __name__ == '__main__':

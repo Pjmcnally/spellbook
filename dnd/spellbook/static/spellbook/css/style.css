@@ -2,6 +2,11 @@
 
 body {
   padding-top: 100px;
+  /*background-color: tan;*/
+}
+
+.spell-level-header {
+    border-bottom: 2px solid #0A4958;
 }
 
 .fixed-anchor {
@@ -10,7 +15,7 @@ body {
 }
 
 .navbar-collapse {
-  text-align:center;
+  text-align: center;
 }
 
 .navbar-nav {
@@ -21,6 +26,7 @@ body {
 .internal-navbar {
     margin-top: 50px;
     border-width: 0; 
+    background-color: white;
 }
 
 .internal-navbar .container {
@@ -87,6 +93,6 @@ body {
 
 .spell-block ul {
     list-style-type: none;
+    padding-left: 1em;
+
 }
-
-
