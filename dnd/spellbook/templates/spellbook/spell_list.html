@@ -15,6 +15,7 @@
         </div>
         <div id="navbar2" class="navbar-collapse collapse">
           <ul class="nav navbar-nav level-links in-nav-text">
+            <li><a href="#search">Search</a></li>
             {% if spells.0 %}<li><a href="#cantrip">Cantrips</a></li>{% endif %}
             {% if spells.1 %}<li><a href="#level-1">1</a></li>{% endif %}
             {% if spells.2 %}<li><a href="#level-2">2</a></li>{% endif %}
@@ -34,6 +35,10 @@
 {% block content %}
   <div id="content-box" class="row">
     <div class="col-md-6 spell-list-container">
+      <div class="spell-block">
+        <h2 id="search" class="fixed-anchor spell-level-header">Search</h2>
+        <input class="form-control" type="text" name="search" placeholder="Search..">
+      </div>
       {% if spells.0 %}
         <div class="spell-block">
           <h2 id="cantrip" class="fixed-anchor spell-level-header">Cantrips</h2>

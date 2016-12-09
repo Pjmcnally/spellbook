@@ -33,6 +33,10 @@ body {
     background-color: lightgrey;
 }
 
+.form-control {
+    display: inline-block;
+}
+
 .spell-container {
     font-family: 'Lora', serif;
     font-size: 18px;
