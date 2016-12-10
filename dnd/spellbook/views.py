@@ -12,6 +12,12 @@ def spell_list(request, slug=None):
     else:
         spells = Spell.objects.filter(source__public=True)
 
+    search = request.GET.get("search")
+
+    if search:
+        print(search)
+        spells = spells.filter(name__icontains=search)
+
     spell_dict = {
         0: spells.filter(level__num=0),
         1: spells.filter(level__num=1),
@@ -25,9 +31,12 @@ def spell_list(request, slug=None):
         9: spells.filter(level__num=9),
     }
 
+    print(spells)
+
     context = {
         'classes': classes,
-        'spells': spell_dict}
+        'spells': spell_dict,
+        'search': search}
 
     return render(request, 'spellbook/spell_list.html', context)
 
