@@ -5,6 +5,7 @@ from .models import Clss, Spell
 
 def spell_list(request, slug=None):
     """ function to render spell list page """
+    class_obj = None
     classes = Clss.objects.all()  # get all classes for navbar
     if slug:
         class_obj = Clss.objects.get(slug__iexact=slug)
@@ -13,9 +14,7 @@ def spell_list(request, slug=None):
         spells = Spell.objects.filter(source__public=True)
 
     search = request.GET.get("search")
-
     if search:
-        print(search)
         spells = spells.filter(name__icontains=search)
 
     spell_dict = {
@@ -31,9 +30,8 @@ def spell_list(request, slug=None):
         9: spells.filter(level__num=9),
     }
 
-    print(spells)
-
     context = {
+        'class': class_obj,
         'classes': classes,
         'spells': spell_dict,
         'search': search}

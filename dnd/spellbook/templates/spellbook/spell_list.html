@@ -37,8 +37,8 @@
     <div class="col-md-6 spell-list-container">
       <div class="spell-block">
         <h2 id="search" class="fixed-anchor spell-level-header">Search</h2>
-        <form action="{% url 'spell_list' %}" method="get">
-          <input class="form-control" type="text" name="search" placeholder={% if search %} "{{search}}" {% else %} "Search.."{% endif %}>
+        <form action="{% if class %} {% url 'class_spell_list' slug=class.slug %} {% else %}{% url 'spell_list' %} {% endif %}" method="get">
+          <input class="form-control" type="text" name="search" placeholder="Search.." {% if search %} value="{{search}}"{% endif %}>
         </form>
       </div>
       {% if spells.0 %}
