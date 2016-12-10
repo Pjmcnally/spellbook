@@ -9,20 +9,17 @@ function main() {
 function setFakeLinkListener () {
     $(".fake-link").click(function(event) {
         event.preventDefault();
-        window.location = "?class=wizard";
+        loadSpells(event.target.id, "");
     });
 }
 
-function loadSpells () {
-    search = GetQueryStringParams('search');
-    clss = GetQueryStringParams('class');
-
+function loadSpells (clss, search) {
     $.ajax({
         method: "post",
         url: "/spellbook/spell_content",
         data: {
             class: clss,
-            search: search,
+            // search: search,
         },
         success: function(data){
             $("#content-box").html(data);
