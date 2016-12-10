@@ -4,7 +4,6 @@ function main() {
     highlightActive();
     switchNavbar();
     closeNavbar();
-    loadSpells();
 }
 
 //function to set the active class on navbar
@@ -37,15 +36,6 @@ function closeNavbar () {
         }
         if ($("#navbar2").hasClass("navbar-collapse collapse in")) {
             $("#nav-toggle-internal").click();
-        }
-    });
-}
-
-function loadSpells () {
-    $.ajax({
-        url: "spell_content",
-        success: function(data){
-            $("#content-box").html(data);
         }
     });
 }
