@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 from .models import Clss, Spell
 
@@ -23,30 +24,40 @@ def spell_detail(request, slug):
 
 
 def spell_content(request):
-    # if slug:
-    #     class_obj = Clss.objects.get(slug__iexact=slug)
-    #     spells = class_obj.spells.filter(source__public=True)
-    # else:
-    spells = Spell.objects.filter(source__public=True)
+    if request.method == 'POST':
+        clss = request.POST.get("class", None)
+        search = request.POST.get("search", None)
 
-    # search = request.GET.get("search")
-    # if search:
-    #     spells = spells.filter(name__icontains=search)
+        print(request.POST)
 
-    spell_dict = {
-        0: spells.filter(level__num=0),
-        1: spells.filter(level__num=1),
-        2: spells.filter(level__num=2),
-        3: spells.filter(level__num=3),
-        4: spells.filter(level__num=4),
-        5: spells.filter(level__num=5),
-        6: spells.filter(level__num=6),
-        7: spells.filter(level__num=7),
-        8: spells.filter(level__num=8),
-        9: spells.filter(level__num=9),
-    }
+        # search = request.POST.get("search", None)
 
-    context = {
-        'spells': spell_dict}
+        if clss:
+            class_obj = Clss.objects.get(slug__iexact=clss)
+            spells = class_obj.spells.filter(source__public=True)
+        else:
+            spells = Spell.objects.filter(source__public=True)
+
+        # search = request.GET.get("search")
+        # if search:
+        #     spells = spells.filter(name__icontains=search)
+
+        spell_dict = {
+            0: spells.filter(level__num=0),
+            1: spells.filter(level__num=1),
+            2: spells.filter(level__num=2),
+            3: spells.filter(level__num=3),
+            4: spells.filter(level__num=4),
+            5: spells.filter(level__num=5),
+            6: spells.filter(level__num=6),
+            7: spells.filter(level__num=7),
+            8: spells.filter(level__num=8),
+            9: spells.filter(level__num=9),
+        }
+
+        context = {
+            'spells': spell_dict}
+    else:
+        return HttpResponse("")
 
     return render(request, 'spellbook/spell_content.html', context)

@@ -34,7 +34,7 @@
         <ul class="nav navbar-nav">
           <li><a href="/spellbook/">All</a></li>
           {% for class in classes %}
-            <li><a href="{{ class.get_absolute_url }}">{{ class.name|title }}</a></li>
+            <li><a class="fake-link" href="?class={{ class.slug }}">{{ class.name|title }}</a></li>
           {% endfor %}
         </ul>
       </div>
