@@ -35,7 +35,8 @@ def spell_list(request, slug=None):
 
     context = {
         'classes': classes,
-        'spells': spell_dict}
+        'spells': spell_dict,
+        'search': search}
 
     return render(request, 'spellbook/spell_list.html', context)
 
