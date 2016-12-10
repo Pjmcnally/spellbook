@@ -31,7 +31,7 @@ def spell_list(request, slug=None):
     }
 
     context = {
-        'class': class_obj.slug,
+        'class': class_obj,
         'classes': classes,
         'spells': spell_dict,
         'search': search}
