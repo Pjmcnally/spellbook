@@ -2,6 +2,15 @@ $(document).ready(main);
 
 function main() {
     loadSpells();
+    setFakeLinkListener();
+
+}
+
+function setFakeLinkListener () {
+    $(".fake-link").click(function(event) {
+        event.preventDefault();
+        window.location = "?class=wizard";
+    });
 }
 
 function loadSpells () {
