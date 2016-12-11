@@ -7,10 +7,16 @@ function main() {
 }
 
 function setFakeLinkListener () {
-    $(".fake-link").click(function(event) {
+    $(".class-link").click(function(event) {
         event.preventDefault();
         loadSpells(event.target.id, "");
+        switchActive($(this));
     });
+}
+
+function switchActive (elem) {
+    $(".class-link").parent().removeClass("active");
+    $(elem).parent().addClass("active");
 }
 
 function loadSpells (clss, search) {
@@ -27,6 +33,21 @@ function loadSpells (clss, search) {
     });
 }
 
+function GetQueryStringParams(sParam) {
+    var queryString = window.location.search.substring(1);
+    var queryVars = queryString.split('&');
+    for (var i = 0; i < queryVars.length; i++) {
+        var param = queryVars[i].split('=');
+        if (param[0] == sParam) {
+            return param[1];
+        }
+    }
+}
+
+/* All functions belowed copied from Django documentation.
+ * link = https://docs.djangoproject.com/en/1.10/ref/csrf/
+ * these functions ensure csrf token passed through with AJAX POST requests
+*/
 // using jQuery
 function getCookie(name) {
     var cookieValue = null;
@@ -56,14 +77,3 @@ $.ajaxSetup({
         }
     }
 });
-
-function GetQueryStringParams(sParam) {
-    var queryString = window.location.search.substring(1);
-    var queryVars = queryString.split('&');
-    for (var i = 0; i < queryVars.length; i++) {
-        var param = queryVars[i].split('=');
-        if (param[0] == sParam) {
-            return param[1];
-        }
-    }
-}
