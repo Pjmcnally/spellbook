@@ -6,12 +6,16 @@ function main() {
 
 }
 
+window.onpopstate = function(event) {
+    console.log("navigated");
+};
+
 function setFakeLinkListener () {
     $(".class-link").click(function(event) {
         event.preventDefault();
         loadSpells(event.target.id, "");
         switchActive($(this));
-        removeHash();
+        // removeHash();
     });
 }
 
@@ -27,6 +31,7 @@ function removeHash () {
 }
 
 function loadSpells (clss, search) {
+    urlPath = clss;
     $.ajax({
         method: "post",
         url: "/spellbook/spell_content",
@@ -36,6 +41,7 @@ function loadSpells (clss, search) {
         },
         success: function(data){
             $("#content-box").html(data);
+            history.pushState({},"", urlPath);
         }
     });
 }
