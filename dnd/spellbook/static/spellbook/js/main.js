@@ -20,6 +20,7 @@ function switchActive (elem) {
     $(elem).parent().addClass("active");
 }
 
+// function found at https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-with-javascript-without-page-refresh/5298684#5298684
 function removeHash () {
     history.pushState("", document.title,
                       window.location.pathname + window.location.search);
