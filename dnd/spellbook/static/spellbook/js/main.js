@@ -11,12 +11,18 @@ function setFakeLinkListener () {
         event.preventDefault();
         loadSpells(event.target.id, "");
         switchActive($(this));
+        removeHash();
     });
 }
 
 function switchActive (elem) {
     $(".class-link").parent().removeClass("active");
     $(elem).parent().addClass("active");
+}
+
+function removeHash () {
+    history.pushState("", document.title,
+                      window.location.pathname + window.location.search);
 }
 
 function loadSpells (clss, search) {
