@@ -28,8 +28,6 @@ def spell_content(request):
         clss = request.POST.get("class", None)
         search = request.POST.get("search", None)
 
-        print(request.POST)
-
         # search = request.POST.get("search", None)
 
         if clss:
