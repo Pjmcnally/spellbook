@@ -34,7 +34,7 @@
         <ul class="nav navbar-nav">
           <li><a class="class-link" href="/spellbook/">All</a></li>
           {% for class in classes %}
-            <li><a class="class-link" id="{{ class.slug }}" href="{{ class.slug }}">{{ class.name|title }}</a></li>
+            <li><a class="class-link" id="{{ class.slug }}" href="/class/{{ class.slug }}">{{ class.name|title }}</a></li>
           {% endfor %}
         </ul>
       </div>
