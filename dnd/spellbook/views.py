@@ -26,8 +26,6 @@ def spell_detail(request, slug):
 def spell_content(request):
     if request.method == 'POST':
         clss = request.POST.get("class", None)
-        search = request.POST.get("search", None)
-
         # search = request.POST.get("search", None)
 
         if clss:
