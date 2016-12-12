@@ -41,7 +41,6 @@ $(function() {
     }
 });
 
-
 // Load content from django database into page.
 function loadContent () {
     _href = window.location.pathname;
@@ -80,7 +79,6 @@ function showLevelLink() {
     });
 }
 
-
 // Parses class string from href.
 function parseClassRef (_href) {
     var clssRe = /class\/([\w]+)/;
@@ -102,17 +100,6 @@ function switchActive (clss) {
     }
     $(clss_id).parent().addClass("active");
 }
-
-// function GetQueryStringParams(sParam) {
-//     var queryString = window.location.search.substring(1);
-//     var queryVars = queryString.split('&');
-//     for (var i = 0; i < queryVars.length; i++) {
-//         var param = queryVars[i].split('=');
-//         if (param[0] == sParam) {
-//             return param[1];
-//         }
-//     }
-// }
 
 /* All functions belowed copied from Django documentation.
  * link = https://docs.djangoproject.com/en/1.10/ref/csrf/
