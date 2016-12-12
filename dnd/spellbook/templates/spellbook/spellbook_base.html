@@ -32,9 +32,9 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a class="class-link" href="/spellbook/">All</a></li>
+          <li><a class="class-link" id="all" href="/spellbook/">All</a></li>
           {% for class in classes %}
-            <li><a class="class-link" id="{{ class.slug }}" href="/class/{{ class.slug }}">{{ class.name|title }}</a></li>
+            <li><a class="class-link" id="{{ class.slug }}" href="{{ class.get_absolute_url }}">{{ class.name|title }}</a></li>
           {% endfor %}
         </ul>
       </div>
