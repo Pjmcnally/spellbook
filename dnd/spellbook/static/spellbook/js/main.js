@@ -6,6 +6,14 @@ function main() {
 
 }
 
+$(function() {
+    if (Modernizr.history) {
+
+    } else {
+
+    }
+});
+
 window.onpopstate = function(event) {
     console.log("navigated");
 };
