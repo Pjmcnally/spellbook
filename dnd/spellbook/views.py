@@ -25,18 +25,18 @@ def spell_detail(request, slug):
 
 def spell_content(request):
     if request.method == 'POST':
-        clss = request.POST.get("class", None)
-        # search = request.POST.get("search", None)
 
+        clss = request.POST.get("class", None)
         if clss:
             class_obj = Clss.objects.get(slug__iexact=clss)
             spells = class_obj.spells.filter(source__public=True)
         else:
             spells = Spell.objects.filter(source__public=True)
 
-        # search = request.GET.get("search")
-        # if search:
-        #     spells = spells.filter(name__icontains=search)
+        search = request.POST.get("search", None)
+        print(search)
+        if search:
+            spells = spells.filter(name__icontains=search)
 
         spell_dict = {
             0: spells.filter(level__num=0),
