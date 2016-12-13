@@ -1,8 +1,4 @@
-$(document).ready(main);
-
-function main() {
-    loadContent();
-}
+$(document).ready(loadContent);
 
 // Set listener to loadContent content on popstate event.
 $(window).on("popstate", function() {
@@ -51,8 +47,16 @@ $("#search-form").on("submit", function() {
 // event listener to load content on value change in search field.
 $("#search-input").on("input", function() {
     event.preventDefault();
+    removeHash();
     loadContent();
 });
+
+
+function removeHash () {
+    if (window.location.hash) {
+        history.pushState(null, null, window.location.pathname + window.location.search);
+    }
+}
 
 // Load content from django database into page.
 function loadContent () {
