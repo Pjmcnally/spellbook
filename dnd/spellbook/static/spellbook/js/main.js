@@ -41,6 +41,18 @@ $(function() {
     }
 });
 
+// event listener to intercept form submission and instead load content
+$("#search-form").on("submit", function() {
+    event.preventDefault();
+    loadContent();
+});
+
+// event listener to load content on value change in search field.
+$("#search-input").on("input", function() {
+    event.preventDefault();
+    loadContent();
+});
+
 // Load content from django database into page.
 function loadContent () {
     _href = window.location.pathname;
@@ -50,6 +62,7 @@ function loadContent () {
         url: "/spellbook/spell_content",
         data: {
             class: clss,
+            search: $("#search-input").val(),
         },
         success: function(data){
             $("#content-box").html(data);
