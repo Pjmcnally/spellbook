@@ -6,6 +6,7 @@ function main() {
 
 // Set listener to loadContent content on popstate event.
 $(window).on("popstate", function() {
+    $("#search-input").val("");
     loadContent();
 });
 
