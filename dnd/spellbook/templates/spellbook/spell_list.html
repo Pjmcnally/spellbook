@@ -38,8 +38,8 @@
     <div class="col-md-6 spell-list-container">
       <div class="spell-block">
         <h2 id="search" class="fixed-anchor spell-level-header">Search</h2>
-        <form id="search-form" method="POST" action="/">{% csrf_token %}
-          <input class="form-control" type="text" name="search" placeholder="Search.." {% if search %} value="{{search}}"{% endif %}>
+        <form id="search-form">
+          <input class="form-control" type="text" name="search" placeholder="Search..">
         </form>
       </div>
       <div id="content-box">
