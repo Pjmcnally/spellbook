@@ -34,7 +34,6 @@ def spell_content(request):
             spells = Spell.objects.filter(source__public=True)
 
         search = request.POST.get("search", None)
-        print(search)
         if search:
             spells = spells.filter(name__icontains=search)
 
