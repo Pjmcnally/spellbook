@@ -1,4 +1,5 @@
 {% extends parent_template|default:"spellbook/spellbook_base.html" %}
+{% load staticfiles %}
 
 {% block internal_nav %}
   <!-- Second filxed navbar -->
@@ -15,17 +16,17 @@
         </div>
         <div id="navbar2" class="navbar-collapse collapse">
           <ul class="nav navbar-nav level-links in-nav-text">
-            <li><a href="#search">Search</a></li>
-            {% if spells.0 %}<li><a href="#cantrip">Cantrips</a></li>{% endif %}
-            {% if spells.1 %}<li><a href="#level-1">1</a></li>{% endif %}
-            {% if spells.2 %}<li><a href="#level-2">2</a></li>{% endif %}
-            {% if spells.3 %}<li><a href="#level-3">3</a></li>{% endif %}
-            {% if spells.4 %}<li><a href="#level-4">4</a></li>{% endif %}
-            {% if spells.5 %}<li><a href="#level-5">5</a></li>{% endif %}
-            {% if spells.6 %}<li><a href="#level-6">6</a></li>{% endif %}
-            {% if spells.7 %}<li><a href="#level-7">7</a></li>{% endif %}
-            {% if spells.8 %}<li><a href="#level-8">8</a></li>{% endif %}
-            {% if spells.9 %}<li><a href="#level-9">9</a></li>{% endif %}
+            <li><a href="#search" class="level-link hidden" id="ll-search">Search</a></li>
+            <li><a href="#cantrip" class="level-link hidden" id="ll-cantrip">Cantrips</a></li>
+            <li><a href="#level-1" class="level-link hidden" id="ll-level-1">1</a></li>
+            <li><a href="#level-2" class="level-link hidden" id="ll-level-2">2</a></li>
+            <li><a href="#level-3" class="level-link hidden" id="ll-level-3">3</a></li>
+            <li><a href="#level-4" class="level-link hidden" id="ll-level-4">4</a></li>
+            <li><a href="#level-5" class="level-link hidden" id="ll-level-5">5</a></li>
+            <li><a href="#level-6" class="level-link hidden" id="ll-level-6">6</a></li>
+            <li><a href="#level-7" class="level-link hidden" id="ll-level-7">7</a></li>
+            <li><a href="#level-8" class="level-link hidden" id="ll-level-8">8</a></li>
+            <li><a href="#level-9" class="level-link hidden" id="ll-level-9">9</a></li>
           </ul>
         </div>
       </div>
@@ -33,134 +34,21 @@
 {% endblock %}
 
 {% block content %}
-  <div id="content-box" class="row">
+  <div id=class="row">
     <div class="col-md-6 spell-list-container">
       <div class="spell-block">
         <h2 id="search" class="fixed-anchor spell-level-header">Search</h2>
-        <form action="{% if class %} {% url 'class_spell_list' slug=class.slug %} {% else %}{% url 'spell_list' %} {% endif %}" method="get">{% csrf_token %}
-          <input class="form-control" type="text" name="search" placeholder="Search.." {% if search %} value="{{search}}"{% endif %}>
+        <form id="search-form">
+          <input id="search-input" class="form-control" type="text" name="search" placeholder="Search..">
         </form>
       </div>
-      {% if spells.0 %}
-        <div class="spell-block">
-          <h2 id="cantrip" class="fixed-anchor spell-level-header">Cantrips</h2>
-          <ul>
-          {% for spell in spells.0 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.1 %}
-        <div class="spell-block">
-          <h2 id="level-1" class="fixed-anchor spell-level-header">1st Level</h2>
-          <ul>
-          {% for spell in spells.1 %}
-            <li class=spell>
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.2 %}
-        <div class="spell-block">
-          <h2 id="level-2" class="fixed-anchor spell-level-header">2nd Level</h2>
-          <ul>
-          {% for spell in spells.2 %}
-            <li class=spell>
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.3 %}
-        <div class="spell-block">
-          <h2 id="level-3" class="fixed-anchor spell-level-header">3rd Level</h2>
-          <ul>
-          {% for spell in spells.3 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.4 %}
-        <div class="spell-block">
-          <h2 id="level-4" class="fixed-anchor spell-level-header">4th Level</h2>
-          <ul>
-          {% for spell in spells.4 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.5 %}
-        <div class="spell-block">
-          <h2 id="level-5" class="fixed-anchor spell-level-header">5th Level</h2>
-          <ul>
-          {% for spell in spells.5 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.6 %}
-        <div class="spell-block">
-          <h2 id="level-6" class="fixed-anchor spell-level-header">6th Level</h2>
-          <ul>
-          {% for spell in spells.6 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.7 %}
-        <div class="spell-block">
-          <h2 id="level-7" class="fixed-anchor spell-level-header">7th Level</h2>
-          <ul>
-          {% for spell in spells.7 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.8 %}
-        <div class="spell-block">
-          <h2 id="level-8" class="fixed-anchor spell-level-header">8th Level</h2>
-          <ul>
-          {% for spell in spells.8 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-      {% if spells.9 %}
-        <div class="spell-block">
-          <h2 id="level-9" class="fixed-anchor spell-level-header">9th Level</h2>
-          <ul>
-          {% for spell in spells.9 %}
-            <li class="spell">
-              <a href={{spell.get_absolute_url}}>{{spell.name}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
+      <div id="content-box">
+      </div>
     </div>
   </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'spellbook/js/main.js' %}"></script>
 {% endblock %}
